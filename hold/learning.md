@@ -63,7 +63,7 @@ document.querySelector('#backToTop').addEventListener('click', function(e) {
 
 * [What is an arrow function?](#what_is_an_arrow_function)
 
-* [What is a function expression?](#test_gopi)
+* [What is a function expression?](#what_is_a_function_expression)
 
 * [What is the `this` keyword?](#what_is_the_this_keyword)
 
@@ -95,7 +95,50 @@ document.querySelector('#backToTop').addEventListener('click', function(e) {
 
 * [What are microtasks and macrotasks?](#what_are_microtasks_and_macrotasks)
 
-========================================================================
+
+
+## **3. Objects, Arrays, and Prototype
+
+
+*  [What are objects in JavaScript?](#what_are_objects_in_javascript)
+
+*  [How can you create objects in JavaScript?](#how_can_you_create_objects_in_javascript)
+
+*  [Difference between dot notation and bracket notation?](#difference_between_dot_notation_and_bracket_notation)
+
+*  [What is prototypal inheritance?](#what_is_prototypal_inheritance)
+
+*  [What is the prototype chain?](#what_is_the_prototype_chain)
+
+*  [What is a constructor function?](#what_is_a_constructor_function)
+
+*  [What are ES6 classes?](#what_are_es6_classes)
+
+*  [What is `Object.create()`?](#what_is_object_create)
+
+*  [Difference between `Object.freeze()` and `Object.seal()`?](#difference_between_object_freeze_and_object_seal)
+
+*  [What is the difference between shallow and deep copy?](#what_is_the_difference_between_shallow_and_deep_copy)
+
+*  [How do you clone an object?](#how_do_you_clone_an_object)
+
+*  [What is destructuring?](#what_is_destructuring)
+
+*  [What are Spread and Rest Operators in JavaScript?](#what_are_spread_and_rest_operators_in_javascript)
+
+*  [Difference between `slice()` and `splice()`?](#difference_between_slice_and_splice)
+
+*  [Difference between `map()`, `forEach()`, `filter()`, and `reduce()`?](#difference_between_map_foreach_filter_and_reduce)
+
+*  [How do you remove duplicates from an array?](#how_do_you_remove_duplicates_from_an_array)
+
+*  [How do you sort an array of objects?](#how_do_you_sort_an_array_of_objects)
+
+*  [What is array flattening?](#what_is_array_flattening)
+
+
+<span style="color:green;">================================================================ </span>
+
 
 
 <h3 id="what_is_javascript">What is JavaScript?</h3>
@@ -120,7 +163,8 @@ If you want, I can also explain:
 Just tell me!
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
+
 
 <h3 id="what_are_javascript_data_types">What are JavaScript data types?</h3>
 
@@ -198,7 +242,8 @@ Arrays, functions, dates—all are technically **objects**.
 
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
+
 
 <h3 id="what_is_the_difference_between_var_let_and_const">What is the difference between `var`, `let`, and `const`?</h3>
 
@@ -261,7 +306,8 @@ let b = 20;
 
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
+
 
 <h3 id="what_is_hoisting">What is hoisting?</h3>
 
@@ -349,7 +395,8 @@ If you want, I can also explain:
 ✔ Common interview questions on hoisting
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
+
 
 <h3 id="what_is_the_typeof_operator">What is the `typeof` operator?</h3>
 
@@ -382,7 +429,8 @@ typeof function(){} // "function"
 
 ---
 
-========================================================================
+<span style="color:green;">================================================================ </span>
+
 
 <h3 id="what_are_primitive_and_non_primitive_values">What are primitive and non-primitive values?</h3>
 
@@ -457,7 +505,8 @@ Non-primitive values are **copied by reference**.
 
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
+
 
 <h3 id="what_is_nan">What is NaN?</h3>
 
@@ -525,7 +574,8 @@ Number.isNaN(value)
 
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
+
 
 <h3 id="what_is_strict_mode">What is strict mode?</h3>
 
@@ -602,7 +652,8 @@ Some operations that would normally fail silently now throw real errors.
 * Blocks bad syntax and unsafe actions.
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
+
 
 <h3 id="what_is_the_difference_between_value_and_reference_types">What is the difference between `value` and `reference` types?</h3>
 
@@ -680,7 +731,8 @@ console.log(obj2.name); // "Peter" (affected)
 
 ---
 
-========================================================================
+<span style="color:green;">================================================================ </span>
+
 
 <h3 id="what_is_the_use_of_semicolons_in_javascript">What is the use of semicolons in JavaScript?</h3>
 
@@ -760,7 +812,8 @@ Ready for the next question!
 
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
+
 
 <h3 id="what_is_the_difference_between_declaration_and_initialization">What is the difference between declaration and initialization?</h3>
 
@@ -809,7 +862,8 @@ let y = 20;
 | **Both together**  | Declare + initialize  | `let a = 5;` |
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
+
 
 <h3 id="what_is_type_coercion">What is type coercion?</h3>
 
@@ -876,7 +930,8 @@ Boolean(0)       // false
 Type coercion is how JavaScript decides the correct data type while performing operations.
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
+
 
 <h3 id="what_is_short_circuit_evaluation">What is short-circuit evaluation?</h3>
 
@@ -954,7 +1009,8 @@ user && user.profile && user.profile.name;
 | `        |                       | `                | First **true** value | That true value |
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
+
 
 <h3 id="what_is_the_difference_between_equale_and_object_is">What is the difference between `==` and `Object.is()`?</h3>
 
@@ -1017,7 +1073,10 @@ Object.is(true, true)  // true
 
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
+
+
+
 
 <h3 id="what_is_the_difference_between_mutable_and_immutable_data">What is the difference between mutable and immutable data?</h3>
 
@@ -1078,10 +1137,12 @@ user.name = "Peter";   // ✔ modifies the same object
 
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
 
-<h3 id="what_is_an_arrow_function"> What are Arrow Functions in JavaScript?</h3>
+
+ <h3 id="what_is_an_arrow_function">  What is an arrow function? <h3>
+ 
 
 **Answer:**
 **Arrow functions** are a **shorter way** to write functions in JavaScript.
@@ -1149,10 +1210,14 @@ they take it from the outer (global) scope.
 > **Arrow functions** are **shorter and simpler** function syntax introduced in ES6,
 > but they **don’t have their own `this`, `arguments`, or `prototype`.**
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
 
-<h3 id="test_gopi"> What is a function expression? </h3>
+
+ <h3 id="what_is_a_function_expression">  What is a function expression? <h3>
+
+ 
+
 
 A **function expression** is a function that is **assigned to a variable**, rather than declared with a name.
 
@@ -1230,9 +1295,12 @@ setTimeout(function() {
 
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
-<h3 id="#what_is_the_this_keyword">What is the `this` keyword?</h3>
+
+
+ <h3 id="what_is_the_this_keyword">  What is the `this` keyword? <h3>
+ 
 
 `this` is a special keyword in JavaScript that refers to the **current execution context** — meaning **the object that is calling the function**.
 
@@ -1331,9 +1399,10 @@ obj.show();
 
 If you want, I can give real interview trick questions about `this`.
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
-<h3 id="#what_is_a_closure">What is a closure?</h3>
+
+<h3 id="what_is_a_closure">What is a closure?</h3>
 
 ## **27. What is a closure?**
 
@@ -1403,9 +1472,10 @@ c(); // 3
 * Useful for private data and state management.
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
-<h3 id="#what_is_lexical_scope">What is lexical scope?</h3>
+
+<h3 id="what_is_lexical_scope">What is lexical scope?</h3>
 
 
 ## **28. What is lexical scope?**
@@ -1474,9 +1544,10 @@ function outer() {
 * Lexical scope enables **closures**.
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
-<h3 id="#what_is_an_iife">What is an IIFE?</h3>
+
+<h3 id="what_is_an_iife">What is an IIFE?</h3>
 
 
 ## **29. What is an IIFE?**
@@ -1542,10 +1613,11 @@ console.log(secret); // ❌ Error
 * Often used for initialization code.
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
 
-<h3 id="#what_is_recursion">What is recursion?</h3>
+
+<h3 id="what_is_recursion">What is recursion?</h3>
 
 
 **Recursion** is a technique where a function **calls itself** to solve a problem.
@@ -1574,10 +1646,11 @@ function countdown(n) {
 Recursion is when a function solves a problem by breaking it into smaller versions of itself until it reaches a stopping point.
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
 
-<h3 id="#what_are_callbacks">What are callbacks?</h3>
+
+<h3 id="what_are_callbacks">What are callbacks?</h3>
 
 
 A **callback** is a function that is **passed as an argument to another function** and is executed **later**.
@@ -1630,9 +1703,10 @@ Want the next one?
 
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
-<h3 id="#what_are_highe_order_functions">What are higher-order functions?</h3>
+
+<h3 id="what_are_highe_order_functions">What are higher-order functions?</h3>
 
 
 A **higher-order function (HOF)** is a function that does **at least one** of the following:
@@ -1689,9 +1763,10 @@ console.log(double(5)); // 10
 A higher-order function is any function that **accepts a function**, **returns a function**, or **does both**.
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
-<h3 id="#what_is_currying">What is currying?</h3>
+
+<h3 id="what_is_currying">What is currying?</h3>
 
 **Currying** is a technique where a function that takes multiple arguments is transformed into **a series of functions**, each taking **one argument at a time**.
 
@@ -1754,9 +1829,10 @@ Currying breaks a multi-argument function into a chain of single-argument functi
 
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
-<h3 id="#what_is_memoization">What is memoization?</h3>
+
+<h3 id="what_is_memoization">What is memoization?</h3>
 
 **Memoization** is an optimization technique where a function **stores the results** of expensive calculations and **reuses** them when the same inputs occur again.
 
@@ -1817,10 +1893,11 @@ console.log(square(5)); // 25 (from cache, fast!)
 Memoization improves performance by **storing previous results** and returning them immediately when the same inputs appear again.
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
 
-<h3 id="#what_are_the_differences_between_call_apply_and_bind">What are the differences between `call()`, `apply()`, and `bind()`?</h3>
+
+<h3 id="what_are_the_differences_between_call_apply_and_bind">What are the differences between `call()`, `apply()`, and `bind()`?</h3>
 
 All three are used to **set the value of `this`** in a function, but they differ in **how arguments are passed** and **when the function runs**.
 
@@ -1904,10 +1981,11 @@ newGreet("World"); // runs later
 If you want, I can show real-world use cases (event handlers, borrowing methods, constructors).
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
 
-<h3 id="#what_is_debouncing">What is debouncing?</h3>
+
+<h3 id="what_is_debouncing">What is debouncing?</h3>
 
 **Debouncing means:
 A function will run only after the user stops doing something for some time.**
@@ -1964,9 +2042,10 @@ If user types fast, the function runs **only after 500ms** of no typing.
 
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
-<h3 id="#what_is_throttling">What is throttling?</h3>
+
+<h3 id="what_is_throttling">What is throttling?</h3>
 
 
 **Throttling means:
@@ -2020,9 +2099,10 @@ window.addEventListener("scroll", throttle(() => {
 Even if user scrolls 100 times, your message prints **only once in 500ms**.
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
-<h3 id="#what_is_the_event_loop">What is the event loop?</h3>
+
+<h3 id="what_is_the_event_loop">What is the event loop?</h3>
 
 The **event loop** is the mechanism that allows JavaScript (which is single-threaded) to handle **asynchronous** operations without blocking the main thread.
 
@@ -2109,9 +2189,10 @@ The event loop:
 Ready for the next one!
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
-<h3 id="#what_is_the_call_stack">What is the call stack?</h3>
+
+<h3 id="what_is_the_call_stack">What is the call stack?</h3>
 
 The **call stack** is a data structure used by JavaScript to keep track of **which function is currently running** and **what function to return to next**.
 
@@ -2183,9 +2264,10 @@ After finishing:
 The call stack is the part of the JavaScript engine that tracks function execution in a last-in-first-out order.
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
 
-<h3 id="#what_are_microtasks_and_macrotasks">What are microtasks and macrotasks?</h3>
+
+<h3 id="what_are_microtasks_and_macrotasks">What are microtasks and macrotasks?</h3>
 
 In JavaScript’s event loop, asynchronous operations are divided into **two types of queues**:
 
@@ -2283,5 +2365,1465 @@ If you want, I can explain:
 * Trick questions involving microtasks vs macrotasks
 
 
-========================================================================
+<span style="color:green;">================================================================ </span>
+
+
+
+
+<h3 id="what_are_objects_in_javascript" >What are objects in JavaScript? <h3>
+
+
+Objects in JavaScript are **collections of key–value pairs** used to store structured data and behavior.
+
+* Keys → also called **properties**
+* Values → can be **any type** (string, number, boolean, array, function, even another object)
+
+JavaScript objects are dynamic — you can add, update, or remove properties at any time.
+
+---
+
+## ✅ **Example (object literal)**
+
+```js
+const user = {
+  name: "John",
+  age: 30,
+  isActive: true
+};
+```
+
+---
+
+## ✅ Objects can store functions (methods)
+
+```js
+const user = {
+  name: "John",
+  greet() {
+    console.log("Hello " + this.name);
+  }
+};
+
+user.greet();
+```
+
+---
+
+## **Summary**
+
+An object is a flexible data structure that stores related data and functions as key–value pairs.
+
+
+
+<span style="color:green;">================================================================ </span>
+
+
+<h3 id="how_can_you_create_objects_in_javascript" >How can you create objects in JavaScript? <h3>
+
+
+
+JavaScript gives you **several ways** to create objects.
+Here are the **main methods** 👇
+
+---
+
+### 🧩 **1. Object Literal (Most Common & Simple)**
+
+You create an object directly using `{}`.
+
+```js
+const person = {
+  name: "John",
+  age: 25,
+  greet: function() {
+    console.log("Hello!");
+  }
+};
+
+console.log(person.name); // John
+person.greet();           // Hello!
+```
+
+✅ **Use when:** you just need one or a few objects quickly.
+
+---
+
+### 🧩 **2. Using the `new Object()` Constructor**
+
+This uses JavaScript’s built-in `Object` constructor.
+
+```js
+const person = new Object();
+person.name = "John";
+person.age = 25;
+```
+
+✅ **Same as literal**, just longer — rarely used today.
+
+---
+
+### 🧩 **3. Using a Constructor Function**
+
+You define a **function** that acts as a **blueprint** for objects,
+and use the `new` keyword to create instances.
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const person1 = new Person("John", 25);
+console.log(person1.name); // John
+```
+
+✅ **Use when:** you want to create **many similar objects**.
+
+---
+
+### 🧩 **4. Using `Object.create()`**
+
+You create a new object and set its **prototype** manually.
+
+```js
+const animal = {
+  eats: true,
+  walk() {
+    console.log("Animal walks");
+  }
+};
+
+const dog = Object.create(animal);
+dog.barks = true;
+
+console.log(dog.eats); // true (inherited from animal)
+```
+
+✅ **Use when:** you want to **inherit** directly from another object.
+
+---
+
+### 🧩 **5. Using ES6 `class` Syntax**
+
+Modern and cleaner syntax — works like constructor functions but easier to read.
+
+```js
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(`Hi, I'm ${this.name}`);
+  }
+}
+
+const p1 = new Person("John", 25);
+p1.greet(); // Hi, I'm John
+```
+
+✅ **Use when:** you want **object-oriented style** code (recommended for large apps).
+
+---
+
+### 📘 **Summary Table**
+
+| Method                   | Example                | Use Case                               |
+| ------------------------ | ---------------------- | -------------------------------------- |
+| **Object Literal**       | `{ name: "John" }`     | Simple, one-time objects               |
+| **`new Object()`**       | `new Object()`         | Same as literal, rarely used           |
+| **Constructor Function** | `new Person()`         | Create many similar objects            |
+| **`Object.create()`**    | `Object.create(proto)` | Create objects with a custom prototype |
+| **Class**                | `new Person()`         | Modern OOP style creation              |
+
+---
+
+### 🎯 **Simple Summary:**
+
+> You can create objects in JavaScript using:
+> **1️⃣ Object literal**, **2️⃣ new Object()**, **3️⃣ constructor functions**, **4️⃣ Object.create()**, or **5️⃣ ES6 classes**.
+>
+> All methods create objects — they just differ in **how they define structure and inheritance**.
+
+
+
+
+<span style="color:green;">================================================================ </span>
+
+
+<h3 id="difference_between_dot_notation_and_bracket_notation" >Difference between dot notation and bracket notation? <h3>
+
+
+JavaScript provides **two ways** to access object properties:
+
+---
+
+# ✅ **1. Dot Notation (`.`)**
+
+**Simplest and most common** way to access properties.
+
+### ✔ Usage:
+
+```js
+object.property
+```
+
+### ✔ Example:
+
+```js
+const user = { name: "John" };
+console.log(user.name); // "John"
+```
+
+### ✔ When to use:
+
+* When the property name is a **valid identifier** (letters, numbers, $, _)
+* When the property name is **known in advance**
+
+---
+
+# ✅ **2. Bracket Notation (`[]`)**
+
+Allows accessing properties **using strings or variables**.
+
+### ✔ Usage:
+
+```js
+object["property"]
+```
+
+### ✔ Example:
+
+```js
+const user = { name: "John" };
+console.log(user["name"]); // "John"
+```
+
+### ✔ Supports dynamic keys:
+
+```js
+const key = "age";
+const user = { age: 30 };
+
+console.log(user[key]); // 30
+```
+
+### ✔ Allows keys with spaces or special characters:
+
+```js
+const obj = { "first name": "John" };
+
+console.log(obj["first name"]); // valid
+// obj.first name // ❌ invalid
+```
+
+---
+
+# ⭐ **Summary Table**
+
+| Feature                    | Dot Notation | Bracket Notation   |
+| -------------------------- | ------------ | ------------------ |
+| Easy to read               | ✔ Yes        | ✔ Yes (but longer) |
+| Dynamic keys               | ❌ No         | ✔ Yes              |
+| Keys with spaces           | ❌ No         | ✔ Yes              |
+| Keys starting with numbers | ❌ No         | ✔ Yes              |
+| Requires a string          | ❌ No         | ✔ Yes              |
+
+
+
+<span style="color:green;">================================================================ </span>
+
+
+<h3 id="what_is_prototypal_inheritance" >What is prototypal inheritance? <h3>
+
+
+
+**Prototypal inheritance** is JavaScript’s system where **objects can inherit properties and methods from other objects** through a hidden internal link called `[[Prototype]]`.
+
+In simple words:
+**Objects can use features of other objects by referencing them as their prototype.**
+
+---
+
+## ✅ **Key idea**
+
+Every JavaScript object has a **prototype**, which is another object.
+If you try to access a property and it doesn’t exist on the object, JavaScript looks for it **up the prototype chain**.
+
+---
+
+## ✔ Example
+
+```js
+const parent = {
+  greet() {
+    console.log("Hello!");
+  }
+};
+
+const child = Object.create(parent);
+
+child.greet(); // inherited from parent
+```
+
+`child` doesn’t have `greet()`, so it looks at its prototype (`parent`).
+
+---
+
+## ✔ Prototype chain
+
+```
+child → parent → Object.prototype → null
+```
+
+JavaScript walks upward until it finds the property or reaches `null`.
+
+---
+
+## ✔ Where prototypes are used
+
+* Objects created using `Object.create()`
+* Constructor functions
+* ES6 classes (`class`) — they use prototypes behind the scenes
+
+---
+
+## **Summary**
+
+Prototypal inheritance allows objects to inherit properties from other objects through a prototype chain, making JavaScript flexible and efficient.
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_is_the_prototype_chain" >What is the prototype chain? <h3>
+
+
+The **prototype chain** is the mechanism JavaScript uses to **look up properties and methods** when they are not found on the current object.
+
+When you access a property:
+
+1. JavaScript checks the object itself.
+2. If not found, it looks at the object’s **prototype**.
+3. Then the prototype’s prototype.
+4. And so on…
+5. Until it reaches `null`.
+
+This linked list of prototypes is called the **prototype chain**.
+
+---
+
+## ✅ **Example**
+
+```js
+const parent = {
+  greet() {
+    console.log("Hello");
+  }
+};
+
+const child = Object.create(parent);
+
+child.greet(); // Found in parent
+```
+
+Lookup steps:
+
+* Does `child` have `greet()`? ❌ No
+* Check `child.__proto__` → parent ✔ Yes
+* Execute it
+
+---
+
+## ✔ Prototype chain structure
+
+Typical chain looks like:
+
+```
+child
+  ↓ [[Prototype]]
+parent
+  ↓ [[Prototype]]
+Object.prototype
+  ↓ [[Prototype]]
+null
+```
+
+---
+
+## ✔ Important points
+
+* All objects eventually inherit from **Object.prototype**.
+* The chain ends at **null**.
+* If a property isn’t found anywhere in the chain → result is `undefined`.
+
+---
+
+## **Summary**
+
+The prototype chain is the path JavaScript follows to find properties by checking the object and then climbing up through its prototypes until it reaches `null`.
+
+
+<span style="color:green;">================================================================ </span>
+
+
+<h3 id="what_is_a_constructor_function" >What is a constructor function? <h3>
+
+A **constructor function** is a special kind of function used to create **multiple objects with the same structure and behavior**.
+
+It acts like a **template** for creating objects.
+
+By convention, constructor function names start with a **capital letter**.
+
+---
+
+## ✅ **Example**
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const p1 = new Person("John", 25);
+const p2 = new Person("Alice", 30);
+```
+
+Here:
+
+* `Person` is the constructor function
+* `new Person()` creates a **new object**
+* `this` refers to the new object
+* Properties (`name`, `age`) are assigned to that object
+
+---
+
+## ✔ What happens behind the scenes when using `new`?
+
+Calling `new Person()` does:
+
+1. Creates a new empty object: `{}`
+2. Sets its prototype → `Person.prototype`
+3. Binds `this` inside the function to that new object
+4. Returns the new object automatically
+
+---
+
+## ✔ Adding shared methods using prototype
+
+```js
+Person.prototype.greet = function () {
+  console.log("Hello " + this.name);
+};
+
+p1.greet();
+```
+
+Using `prototype` ensures all objects share the same method (memory efficient).
+
+---
+
+## **Summary**
+
+A constructor function is a blueprint used with the `new` keyword to create multiple similar objects, with shared behavior via `prototype`.
+
+
+<span style="color:green;">================================================================ </span>
+
+
+<h3 id="what_are_es6_classes" >What are ES6 classes? <h3>
+
+
+**ES6 classes** are a modern, cleaner syntax introduced in ES6 (2015) for creating objects and handling inheritance in JavaScript.
+
+They are **not new object systems** —
+they are just **syntax sugar** on top of JavaScript’s existing **prototype-based** inheritance.
+
+Classes make code more readable and easier to structure.
+
+---
+
+## ✅ **Basic class example**
+
+```js
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log("Hello " + this.name);
+  }
+}
+
+const p1 = new Person("John", 25);
+p1.greet(); // Hello John
+```
+
+---
+
+## ✔ Key features of ES6 classes
+
+### **1. `constructor` method**
+
+Runs automatically when a new instance is created.
+
+### **2. Methods inside classes**
+
+Automatically added to the prototype.
+
+### **3. No commas between methods**
+
+### **4. Inheritance using `extends`**
+
+```js
+class Student extends Person {
+  study() {
+    console.log(this.name + " is studying");
+  }
+}
+```
+
+### **5. `super()` keyword**
+
+Used to call the parent class constructor.
+
+---
+
+## 🆚 **Classes vs Constructor Functions**
+
+| ES6 Classes                              | Constructor Functions               |
+| ---------------------------------------- | ----------------------------------- |
+| Cleaner syntax                           | More verbose                        |
+| Built-in inheritance using `extends`     | Manual prototype manipulation       |
+| Methods automatically added to prototype | Must assign to `Function.prototype` |
+| Looks like OOP languages                 | Prototype-based style               |
+
+---
+
+## **Summary**
+
+ES6 classes are a modern, readable syntax for creating objects and handling inheritance in JavaScript. They still use prototypes internally but make object-oriented programming much easier.
+
+---
+
+Want the next question?
+
+
+
+<span style="color:green;">================================================================ </span>
+
+
+<h3 id="what_is_object_create" >What is `Object.create()`? <h3>
+
+
+`Object.create()` is a method used to **create a new object** and **directly set its prototype**.
+
+In simple words:
+**It creates an object that inherits from another object.**
+
+---
+
+## ✅ **Basic example**
+
+```js
+const parent = {
+  greet() {
+    console.log("Hello");
+  }
+};
+
+const child = Object.create(parent);
+
+child.greet(); // inherited from parent
+```
+
+Here:
+
+* `parent` → becomes the prototype of `child`
+* `child` inherits all properties and methods from `parent`
+
+---
+
+## ✔ Why use `Object.create()`?
+
+### **1. Direct control of the prototype**
+
+You can set the prototype without constructor functions or classes.
+
+### **2. Clean inheritance**
+
+No need for `function` or `class`.
+
+### **3. Create objects with shared behavior**
+
+Efficient and simple.
+
+---
+
+## ✔ Creating an object with custom properties
+
+```js
+const person = Object.create(
+  {
+    greet() {
+      console.log("Hi!");
+    }
+  },
+  {
+    name: { value: "John", writable: true }
+  }
+);
+
+console.log(person.name); // John
+person.greet();
+```
+
+---
+
+## ✔ Prototype chain visualization
+
+```
+child → parent → Object.prototype → null
+```
+
+---
+
+## **Summary**
+
+`Object.create()` creates a new object with the prototype you specify, making it a simple and powerful tool for prototypal inheritance.
+
+<span style="color:green;">================================================================ </span>
+
+
+<h3 id="difference_between_object_freeze_and_object_seal" >Difference between `Object.freeze()` and `Object.seal()`? <h3>
+
+Both are used to **restrict changes** to an object, but the level of restriction is different.
+
+---
+
+# ✅ **1. `Object.freeze()` — MOST strict**
+
+**You cannot:**
+
+* ❌ Add new properties
+* ❌ Remove properties
+* ❌ Modify existing properties
+* ❌ Reassign values
+
+The object becomes **fully immutable**.
+
+### Example:
+
+```js
+const obj = { a: 1 };
+
+Object.freeze(obj);
+
+obj.a = 100;   // ❌ ignored
+obj.b = 2;     // ❌ ignored
+delete obj.a;  // ❌ ignored
+
+console.log(obj); // { a: 1 }
+```
+
+---
+
+# ✅ **2. `Object.seal()` — PARTIALLY strict**
+
+**You cannot:**
+
+* ❌ Add new properties
+* ❌ Remove properties
+
+**But you can still:**
+
+* ✔ Modify existing property values (if writable)
+
+### Example:
+
+```js
+const obj = { a: 1 };
+
+Object.seal(obj);
+
+obj.a = 100;   // ✔ allowed
+obj.b = 2;     // ❌ not allowed
+delete obj.a;  // ❌ not allowed
+
+console.log(obj); // { a: 100 }
+```
+
+---
+
+# ⭐ Summary Table
+
+| Feature               | `Object.freeze()` | `Object.seal()`       |
+| --------------------- | ----------------- | --------------------- |
+| Add properties        | ❌ No              | ❌ No                  |
+| Delete properties     | ❌ No              | ❌ No                  |
+| Modify values         | ❌ No              | ✔ Yes                 |
+| Make object immutable | ✔ Fully immutable | ❌ Partially immutable |
+
+---
+
+## **Summary**
+
+* `freeze()` → **No add, no delete, no changes**
+* `seal()` → **No add, no delete, BUT can change values**
+
+
+<span style="color:green;">================================================================ </span>
+
+
+<h3 id="what_is_the_difference_between_shallow_and_deep_copy" >What is the difference between shallow and deep copy? <h3>
+
+
+### **1. Shallow Copy**
+
+A **shallow copy** copies only the **top-level properties**.
+
+If the object contains nested objects or arrays, **only their references are copied**, not the actual values.
+
+➡️ So changing a nested object affects both the original and the copy.
+
+### Example:
+
+```js
+const original = { a: 1, b: { c: 2 } };
+
+const shallow = { ...original }; // or Object.assign({}, original)
+
+shallow.b.c = 999;
+
+console.log(original.b.c); // 999 ❗ (affected)
+```
+
+---
+
+## ✅ **2. Deep Copy**
+
+A **deep copy** copies **all levels**, including nested objects, arrays, and references.
+
+➡️ The original and the copy become **completely independent**.
+
+### Example:
+
+```js
+const original = { a: 1, b: { c: 2 } };
+
+const deep = JSON.parse(JSON.stringify(original));
+
+deep.b.c = 999;
+
+console.log(original.b.c); // 2 🎉 (not affected)
+```
+
+---
+
+## ⭐ Summary Table
+
+| Feature                                 | Shallow Copy | Deep Copy |
+| --------------------------------------- | ------------ | --------- |
+| Copies top-level values                 | ✔ Yes        | ✔ Yes     |
+| Copies nested objects independently     | ❌ No         | ✔ Yes     |
+| Nested objects share references         | ✔ Yes        | ❌ No      |
+| Changing nested values affects original | ✔ Yes        | ❌ No      |
+
+---
+
+## Examples of Shallow Copy
+
+* Spread operator `...`
+* `Object.assign()`
+* `Array.prototype.slice()`
+* `Array.from()`
+
+## Examples of Deep Copy
+
+* `JSON.parse(JSON.stringify(obj))` (simple data only)
+* `structuredClone(obj)` (best modern method)
+* Manual recursive copy function
+
+---
+
+If you'd like, I can explain with diagrams or real-world analogies!
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="how_do_you_clone_an_object" >How do you clone an object? <h3>
+
+
+Cloning an object means creating a **copy** of it.
+There are **two types** of cloning:
+
+* **Shallow clone**
+* **Deep clone**
+
+Below are the most commonly used methods.
+
+---
+
+# ✅ **1. Shallow Clone Methods**
+
+### **a) Spread operator (most common)**
+
+```js
+const copy = { ...original };
+```
+
+### **b) Object.assign()**
+
+```js
+const copy = Object.assign({}, original);
+```
+
+### **c) Shallow clone of arrays**
+
+```js
+const copyArr = [...arr];
+```
+
+➡️ These methods **do NOT clone nested objects** (nested objects share references).
+
+---
+
+# ✅ **2. Deep Clone Methods**
+
+(Clones nested objects too)
+
+### **a) structuredClone() (BEST & modern)**
+
+```js
+const deepCopy = structuredClone(original);
+```
+
+Supports objects, arrays, dates, maps, sets, etc.
+
+### **b) JSON method (simple but limited)**
+
+```js
+const deepCopy = JSON.parse(JSON.stringify(original));
+```
+
+❌ Does not support `Date`, `Map`, `Set`, `undefined`, functions, circular references.
+
+### **c) Manual deep clone (recursive)**
+
+```js
+function deepClone(obj) {
+  if (obj === null || typeof obj !== "object") return obj;
+
+  const copy = Array.isArray(obj) ? [] : {};
+
+  for (let key in obj) {
+    copy[key] = deepClone(obj[key]);
+  }
+
+  return copy;
+}
+```
+
+---
+
+# ✅ Summary Table
+
+| Method                         | Type    | Supports nested? | Notes              |
+| ------------------------------ | ------- | ---------------- | ------------------ |
+| `{ ...obj }`                   | Shallow | ❌               | Fast, common       |
+| `Object.assign()`              | Shallow | ❌               | Same as spread     |
+| `structuredClone()`            | Deep    | ✔                | Best modern method |
+| `JSON.parse(JSON.stringify())` | Deep    | ✔                | Limited data types |
+| `Recursive function`           | Deep    | ✔                | Custom control     |
+
+
+<span style="color:green;">================================================================ </span>
+
+
+
+<h3 id="what_is_destructuring" >What is destructuring? <h3>
+
+
+**Destructuring assignment** is a feature in JavaScript that lets you **unpack (extract) values** from **arrays or objects** into separate variables easily.
+
+It makes code **shorter and easier to read**.
+
+---
+
+### 📘 **1. Array Destructuring**
+
+You can extract values from an array:
+
+```js
+const colors = ["red", "green", "blue"];
+
+const [first, second, third] = colors;
+
+console.log(first);  // red
+console.log(second); // green
+console.log(third);  // blue
+```
+
+You can also skip values:
+
+```js
+const [a, , c] = [1, 2, 3];
+console.log(a, c); // 1 3
+```
+
+---
+
+### 📦 **2. Object Destructuring**
+
+You can extract properties from an object:
+
+```js
+const person = { name: "John", age: 25, city: "New York" };
+
+const { name, age } = person;
+
+console.log(name); // John
+console.log(age);  // 25
+```
+
+You can also rename variables:
+
+```js
+const { name: userName, city: userCity } = person;
+console.log(userName); // John
+console.log(userCity); // New York
+```
+
+---
+
+### ⚙️ **3. Default Values**
+
+You can set default values when the property doesn’t exist:
+
+```js
+const { country = "USA" } = person;
+console.log(country); // USA
+```
+
+---
+
+### 🎯 **In short:**
+
+> **Destructuring** lets you **quickly extract values** from arrays or objects
+> and store them in variables — making your code cleaner and shorter.
+
+
+<span style="color:green;">================================================================ </span>
+
+
+
+<h3 id="what_are_spread_and_rest_operators_in_javascript" >What are Spread and Rest Operators in JavaScript? <h3>
+
+
+
+Both the **spread (`...`)** and **rest (`...`)** operators use **three dots**,
+but they work in **opposite ways** depending on where they’re used.
+
+---
+
+### 🌀 **1. Spread Operator (`...`)**
+
+➡️ **Used to expand (spread out)** elements from arrays or objects.
+
+It takes items **out of** an array or object.
+
+**Example (Array):**
+
+```js
+const numbers = [1, 2, 3];
+const moreNumbers = [...numbers, 4, 5];
+
+console.log(moreNumbers); // [1, 2, 3, 4, 5]
+```
+
+**Example (Object):**
+
+```js
+const person = { name: "John", age: 25 };
+const updatedPerson = { ...person, city: "New York" };
+
+console.log(updatedPerson);
+// { name: "John", age: 25, city: "New York" }
+```
+
+✅ It’s great for **copying** or **combining** arrays and objects.
+
+---
+
+### 🧩 **2. Rest Operator (`...`)**
+
+➡️ **Used to collect (gather)** multiple values into a single variable.
+
+It takes items **into** an array.
+
+**Example (Function Parameters):**
+
+```js
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num);
+}
+
+console.log(sum(1, 2, 3, 4)); // 10
+```
+
+**Example (Destructuring):**
+
+```js
+const [first, ...rest] = [10, 20, 30, 40];
+console.log(first); // 10
+console.log(rest);  // [20, 30, 40]
+```
+
+---
+
+### ⚙️ **Main Difference:**
+
+| Operator           | Meaning         | Direction | Example Use            |
+| ------------------ | --------------- | --------- | ---------------------- |
+| **Spread (`...`)** | Expands values  | Outward   | Combine arrays/objects |
+| **Rest (`...`)**   | Collects values | Inward    | Gather function args   |
+
+---
+
+### 🎯 **In short:**
+
+> **Spread (`...`)** expands values out of arrays/objects.
+> **Rest (`...`)** gathers multiple values into an array.
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="difference_between_slice_and_splice" >Difference between `slice()` and `splice()`? <h3>
+
+
+# ✅ Difference Between `slice()` and `splice()`
+
+| Feature                  | `slice()`                            | `splice()`                            |
+| ------------------------ | ------------------------------------ | ------------------------------------- |
+| Modifies original array? | ❌ No                                 | ✔ Yes                                 |
+| Returns what?            | A **new array**                      | The **removed elements**              |
+| Purpose                  | To **copy/extract** part of an array | To **add or remove** elements         |
+| Arguments                | `(start, end)`                       | `(start, deleteCount, ...itemsToAdd)` |
+
+---
+
+# ✅ **1. `slice()` — Non-destructive (does NOT change original)**
+
+Used to **copy** or **extract** a part of an array.
+
+### Example:
+
+```js
+const arr = [1, 2, 3, 4];
+const result = arr.slice(1, 3);
+
+console.log(result); // [2, 3]
+console.log(arr);    // [1, 2, 3, 4] (unchanged)
+```
+
+---
+
+# ✅ **2. `splice()` — Destructive (MODIFIES original array)**
+
+Used to **add**, **remove**, or **replace** elements in an array.
+
+### Example: remove elements
+
+```js
+const arr = [1, 2, 3, 4];
+const removed = arr.splice(1, 2);
+
+console.log(removed); // [2, 3]
+console.log(arr);     // [1, 4] (changed)
+```
+
+### Example: add elements
+
+```js
+const arr = [1, 4];
+arr.splice(1, 0, 2, 3);
+
+console.log(arr); // [1, 2, 3, 4]
+```
+
+---
+
+# ⭐ **Summary (Easy to remember)**
+
+* **slice = safe** → does NOT modify
+* **splice = surgery** → modifies the array
+
+---
+
+<span style="color:green;">================================================================ </span>
+
+
+
+<h3 id="what_is_the_difference_between_methods"> What is the difference between `map()`, `forEach()`, `filter()`, and `reduce()`?</h3>
+
+
+
+### 🧩 1. **`forEach()`**
+
+👉 Used to **loop through** each element in an array.
+It **does not return** anything — just performs an action.
+
+**Example:**
+
+```js
+let numbers = [1, 2, 3];
+numbers.forEach(num => console.log(num * 2));
+```
+
+🟢 Output:
+
+```
+2
+4
+6
+```
+
+✅ **Use when:** you just want to **run code for each item** (like printing or updating).
+
+---
+
+### 🧩 2. **`map()`**
+
+👉 Creates a **new array** by **transforming** each element.
+The **length stays the same**, but the **values can change**.
+
+**Example:**
+
+```js
+let numbers = [1, 2, 3];
+let doubled = numbers.map(num => num * 2);
+console.log(doubled);
+```
+
+🟢 Output:
+
+```
+[2, 4, 6]
+```
+
+✅ **Use when:** you want a **new array** with **modified values**.
+
+---
+
+### 🧩 3. **`filter()`**
+
+👉 Creates a **new array** with elements that **meet a condition**.
+It **filters out** the ones that don’t match.
+
+**Example:**
+
+```js
+let numbers = [1, 2, 3, 4, 5];
+let even = numbers.filter(num => num % 2 === 0);
+console.log(even);
+```
+
+🟢 Output:
+
+```
+[2, 4]
+```
+
+✅ **Use when:** you want to **keep only some elements** based on a test.
+
+---
+
+### 🧩 4. **`reduce()`**
+
+👉 Reduces an array to **a single value** (like sum, average, or object).
+You provide a **callback** and an **initial value**.
+
+**Example:**
+
+```js
+let numbers = [1, 2, 3, 4];
+let total = numbers.reduce((acc, num) => acc + num, 0);
+console.log(total);
+```
+
+🟢 Output:
+
+```
+10
+```
+
+✅ **Use when:** you want to **combine all elements** into **one result**.
+
+---
+
+### 🧠 **Quick Summary Table**
+
+| Method        | Returns New Array? | Purpose                | Example Result   |
+| ------------- | ------------------ | ---------------------- | ---------------- |
+| **forEach()** | ❌ No               | Loop through items     | Just prints/logs |
+| **map()**     | ✅ Yes              | Transform each item    | `[2,4,6]`        |
+| **filter()**  | ✅ Yes              | Select some items      | `[2,4]`          |
+| **reduce()**  | ❌ (any value)      | Combine into one value | `10`             |
+
+---
+
+### 🎯 **Simple Summary:**
+
+> * `forEach()` → just loop
+> * `map()` → transform values
+> * `filter()` → keep what you need
+> * `reduce()` → make one final result
+
+
+<span style="color:green;">================================================================ </span>
+
+
+<h3 id="how_do_you_remove_duplicates_from_an_array" >How do you remove duplicates from an array? <h3>
+
+There are several common ways.
+The **most modern and simplest** is using a **Set**.
+
+---
+
+## **1. Using Set (BEST & easiest)**
+
+```js
+const arr = [1, 2, 2, 3, 4, 4];
+
+const unique = [...new Set(arr)];
+
+console.log(unique); // [1, 2, 3, 4]
+```
+
+---
+
+## **2. Using `filter()` + `indexOf()`**
+
+```js
+const arr = [1, 2, 2, 3, 4, 4];
+
+const unique = arr.filter((item, index) => arr.indexOf(item) === index);
+
+console.log(unique);
+```
+
+---
+
+## **3. Using `reduce()`**
+
+```js
+const arr = [1, 2, 2, 3];
+
+const unique = arr.reduce((acc, val) => {
+  if (!acc.includes(val)) acc.push(val);
+  return acc;
+}, []);
+
+console.log(unique);
+```
+
+---
+
+## **4. Using an object or Map (fast for large data)**
+
+```js
+const arr = [1, 2, 2, 3];
+
+const map = {};
+const result = [];
+
+arr.forEach(item => {
+  if (!map[item]) {
+    map[item] = true;
+    result.push(item);
+  }
+});
+
+console.log(result);
+```
+
+---
+
+# ⭐ Summary
+
+| Method       | Best For         | Notes               |
+| ------------ | ---------------- | ------------------- |
+| `new Set()`  | Most cases       | Fast, clean, modern |
+| `filter()`   | Simple logic     | Slightly slower     |
+| `reduce()`   | Functional style | Good for interviews |
+| `Map/Object` | Large datasets   | Very fast           |
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="how_do_you_sort_an_array_of_objects"> How do you sort an array of objects? <h3>
+
+
+You sort an array of objects using **`Array.prototype.sort()`** with a **custom compare function**.
+
+---
+
+##  Example 1: Sort by a number property
+
+```js
+const users = [
+  { name: "A", age: 30 },
+  { name: "B", age: 20 },
+  { name: "C", age: 25 }
+];
+
+users.sort((a, b) => a.age - b.age);
+
+console.log(users);
+// Sorted by age: 20, 25, 30
+```
+
+### Explanation:
+
+* `a.age - b.age`
+
+  * negative → a comes first
+  * positive → b comes first
+  * zero → equal (no change)
+
+---
+
+# ✅ Example 2: Sort by a string property
+
+Use `localeCompare()`.
+
+```js
+const items = [
+  { name: "banana" },
+  { name: "apple" },
+  { name: "cherry" }
+];
+
+items.sort((a, b) => a.name.localeCompare(b.name));
+
+console.log(items);
+```
+
+---
+
+# ✅ Example 3: Sort descending
+
+```js
+users.sort((a, b) => b.age - a.age);
+```
+
+---
+
+# ✅ Example 4: Sort by multiple fields
+
+First by `age`, then by `name`:
+
+```js
+users.sort((a, b) => {
+  if (a.age !== b.age) return a.age - b.age;
+  return a.name.localeCompare(b.name);
+});
+```
+
+---
+
+# ⭐ Summary
+
+* Use **`.sort()`** with a compare function.
+* Numbers → `a.prop - b.prop`
+* Strings → `a.prop.localeCompare(b.prop)`
+* Multiple fields → check one, then fallback to another.
+
+
+
+<span style="color:green;">================================================================ </span>
+
+Here’s the answer **clean, simple, and interview-ready**:
+
+---
+
+# ✅ What is array flattening?
+
+**Array flattening** means converting a **nested (multi-dimensional) array** into a **single-level array**.
+
+Example of a nested array:
+
+```js
+[1, [2, 3], [4, [5, 6]]]
+```
+
+Flattened:
+
+```js
+[1, 2, 3, 4, 5, 6]
+```
+
+---
+
+# ✅ 1. `flat()` (ES2019 — BEST & simplest)
+
+### **Shallow flatten (one level)**
+
+```js
+const arr = [1, [2, 3]];
+const flat = arr.flat();
+console.log(flat); // [1, 2, 3]
+```
+
+### **Deep flatten**
+
+```js
+const arr = [1, [2, [3, [4]]]];
+const flat = arr.flat(Infinity);
+
+console.log(flat); // [1, 2, 3, 4]
+```
+
+---
+
+# ✅ 2. Using `reduce()` + recursion
+
+```js
+function flatten(arr) {
+  return arr.reduce((acc, val) => {
+    return Array.isArray(val) 
+      ? acc.concat(flatten(val))
+      : acc.concat(val);
+  }, []);
+}
+
+console.log(flatten([1, [2, [3]]])); 
+// [1, 2, 3]
+```
+
+---
+
+# ✅ 3. Using `JSON` trick (not recommended)
+
+```js
+JSON.parse("[" + arr.toString() + "]");
+```
+
+❌ Breaks on objects, `null`, empty items.
+
+---
+
+# ⭐ Summary
+
+* **Array flattening** → turning nested arrays into a single-level array.
+* **Best method**: `arr.flat(Infinity)`
+* Can also be done using recursion or `reduce()`.
+
+<span style="color:green;">================================================================ </span>
+
+
 
