@@ -159,7 +159,34 @@ document.querySelector('#backToTop').addEventListener('click', function(e) {
 
 - [What is `dataset` in HTML?](#what_is_dataset_in_html)
 
-<span style="color:green;">================================================================ </span>
+## **5. Asynchronous JavaScript**
+
+- [What is AJAX?](#what_is_ajax)
+
+- [What is asynchronous programming?](#what_is_asynchronous_programming)
+
+- [What is a Promise?](#what_is_a_promise)
+
+- [What is async/await?](#what_is_async_await)
+
+- [What is callback hell. How do you avoid callback hell?](#what_is_callback_hell_how_do_you_avoid_callback_hell)
+
+- [What is the fetch API?](#what_is_the_fetch_api)
+
+- [What is the event loop and how does it work?](#what_is_the_event_loop_and_how_does_it_work)
+
+- [What are setTimeout and setInterval?](#what_are_settimeout_and_setinterval)
+
+- [What is a Web Worker?](#what_is_a_web_worker)
+
+- [What is a Service Worker?](#what_is_a_service_worker)
+
+- [What is CORS?](#what_is_cors)
+
+- [What are SSE (Server-Sent Events)?](#what_are_sse)
+
+- [What is long polling?](#what_is_long_polling)
+  <span style="color:green;">================================================================ </span>
 
 <h3 id="what_is_javascript">What is JavaScript?</h3>
 
@@ -1118,7 +1145,6 @@ user.name = "Peter"; // ✔ modifies the same object
 
  <h3 id="what_is_an_arrow_function">  What is an arrow function? <h3>
 
-
 **Answer:**
 **Arrow functions** are a **shorter way** to write functions in JavaScript.
 They were introduced in **ES6 (ES2015)** to make code simpler and cleaner.
@@ -1265,7 +1291,6 @@ setTimeout(function () {
 <span style="color:green;">================================================================ </span>
 
  <h3 id="what_is_the_this_keyword">  What is the `this` keyword? <h3>
-
 
 `this` is a special keyword in JavaScript that refers to the **current execution context** — meaning **the object that is calling the function**.
 
@@ -4552,5 +4577,753 @@ btn.dataset.user = "mike";
 # 🔹 One-line definition
 
 **`dataset` gives you easy access to HTML attributes that start with `data-`.**
+
+<span style="color:green;">================================================================ </span>
+
+ <h3 id="what_is_ajax"> What is AJAX?</h3>
+
+## What is AJAX?\*\*
+
+**AJAX (Asynchronous JavaScript and XML)** is a technique used in web development that allows a webpage to **send or receive data from the server in the background without reloading the entire page**.  
+This makes applications faster and more interactive.  
+Although “XML” is in the name, **modern AJAX mostly uses JSON** for sending and receiving data.
+
+---
+
+## **Simple jQuery AJAX Example (Interview-friendly)**
+
+```javascript
+$.ajax({
+  url: "fetch-data.php", // Server file
+  method: "GET", // Request type
+  success: function (response) {
+    $("#result").html(response); // Update part of the page
+  },
+});
+```
+
+### **How this works**
+
+1. JavaScript sends a request to the server (`fetch-data.php`).
+2. The server returns some data.
+3. Only the `#result` section of the page updates — **no page refresh**.
+
+---
+
+## **Short Practical Example (PHP server-side)**
+
+**fetch-data.php**
+
+```php
+echo "Hello, this data came from the server without reloading!";
+```
+
+<span style="color:green;">================================================================ </span>
+
+ <h3 id="what_is_asynchronous_programming"> What is asynchronous programming?</h3>
+
+**Asynchronous programming** is a way of writing code where tasks can run **in the background** without stopping or blocking the main program.
+
+It allows a program to **continue doing other work while waiting** for slow operations like:
+
+- Server requests
+- File loading
+- Database queries
+- Timers
+
+This makes applications faster and more responsive.
+
+---
+
+## ⭐ **Simple Explanation**
+
+Instead of waiting for one task to finish, the program can start other tasks.
+When the background task completes, it notifies the program.
+
+---
+
+## **Short Code Example (JavaScript)**
+
+```javascript
+console.log("Start");
+
+setTimeout(function () {
+  console.log("This runs after 2 seconds");
+}, 2000);
+
+console.log("End");
+```
+
+### Output:
+
+```
+Start
+End
+This runs after 2 seconds
+```
+
+**Why?**
+Because `setTimeout` runs asynchronously — it doesn’t block the code.
+
+---
+
+## ⭐ One-line version (very short):
+
+**Asynchronous programming allows a program to handle long tasks without stopping the whole application.**
+
+<span style="color:green;">================================================================ </span>
+
+ <h3 id="what_is_a_promise"> What is a Promise?</h3>
+
+A **Promise** in JavaScript is an object that represents the **future result** of an asynchronous operation.
+It acts like a placeholder for a value that you will get **later** (success or failure).
+
+A Promise has **three states**:
+
+1. **Pending** – operation is still running
+2. **Resolved (Fulfilled)** – operation completed successfully
+3. **Rejected** – operation failed
+
+Promises help avoid “callback hell” and make asynchronous code cleaner and easier to manage.
+
+---
+
+## **Simple Promise Example**
+
+```javascript
+let myPromise = new Promise(function (resolve, reject) {
+  let success = true;
+
+  if (success) {
+    resolve("Task completed successfully!");
+  } else {
+    reject("Something went wrong!");
+  }
+});
+
+myPromise
+  .then(function (result) {
+    console.log(result); // Runs if resolved
+  })
+  .catch(function (error) {
+    console.log(error); // Runs if rejected
+  });
+```
+
+---
+
+## ⭐ One-line version (very short):
+
+**A Promise is a JavaScript object that handles asynchronous operations and returns a result in the future.**
+
+<span style="color:green;">================================================================ </span>
+
+ <h3 id="what_is_async_await"> What is async/await?</h3>
+
+**async/await** is a modern JavaScript syntax used to handle asynchronous operations in a way that looks and reads like normal, synchronous code.
+
+- **`async`** makes a function return a **Promise**.
+- **`await`** pauses the function until the Promise **resolves** (or rejects).
+
+It helps write cleaner, easier-to-read asynchronous code without `.then()` or `.catch()` chaining.
+
+---
+
+## ⭐ Simple Explanation
+
+Think of **await** as saying:
+
+> “Wait here until this task finishes, then continue.”
+
+It makes asynchronous code **look like step-by-step code**.
+
+---
+
+## ⭐ Simple Example (Very Interview-Friendly)
+
+```javascript
+async function getData() {
+  try {
+    let response = await fetch("https://example.com/api");
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log("Error:", error);
+  }
+}
+
+getData();
+```
+
+### What happens here?
+
+- The function waits at each `await` until the Promise finishes.
+- No `.then()`, no callback hell.
+- The code looks clean and synchronous.
+
+---
+
+## ⭐ One-line Version
+
+**async/await is a cleaner way to work with Promises, allowing asynchronous code to look synchronous.**
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_is_callback_hell_how_do_you_avoid_callback_hell"> What is callback hell. How do you avoid callback hell?</h3>
+
+**Callback Hell** is a situation in JavaScript where multiple callbacks are nested inside each other, creating code that looks messy, is hard to read, and difficult to maintain.
+It happens when you perform many asynchronous tasks one after another.
+
+### Example of Callback Hell:
+
+```javascript
+doTask1(function (result1) {
+  doTask2(result1, function (result2) {
+    doTask3(result2, function (result3) {
+      doTask4(result3, function (result4) {
+        console.log("Done!");
+      });
+    });
+  });
+});
+```
+
+This deep pyramid-shaped structure is called **“Pyramid of Doom”**.
+
+---
+
+## ⭐ **Why is it bad?**
+
+- Hard to read
+- Hard to debug
+- Hard to maintain
+- Error handling becomes messy
+
+---
+
+## ⭐ **How do you avoid Callback Hell?**
+
+### ✔ 1. Use **Promises**
+
+```javascript
+doTask1()
+  .then(doTask2)
+  .then(doTask3)
+  .then(doTask4)
+  .catch((error) => console.log(error));
+```
+
+---
+
+### ✔ 2. Use **async/await** (Best modern solution)
+
+```javascript
+async function runTasks() {
+  try {
+    let r1 = await doTask1();
+    let r2 = await doTask2(r1);
+    let r3 = await doTask3(r2);
+    let r4 = await doTask4(r3);
+    console.log("Done!");
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+runTasks();
+```
+
+Much cleaner and easier to read.
+
+---
+
+### ✔ 3. Use **modular functions**
+
+Break code into small functions instead of nesting.
+
+---
+
+## ⭐ **Short Interview Version (One-liner)**
+
+**Callback Hell is deeply nested callbacks that make code hard to read and maintain. We avoid it using Promises, async/await, and modular code structure.**
+
+<span style="color:green;">================================================================ </span>
+
+ <h3 id="what_is_the_fetch_api"> What is the fetch API?</h3>
+
+The **Fetch API** is a modern JavaScript interface used to make **HTTP requests** (like GET, POST) from the browser.
+It is used to fetch data from servers **asynchronously** and returns a **Promise**.
+
+Fetch is cleaner, simpler, and more powerful than `XMLHttpRequest`.
+
+---
+
+## ⭐ **Why is it used?**
+
+- To call APIs
+- To send/receive JSON data
+- To load data without refreshing the page (AJAX)
+- To replace older AJAX/XHR calls
+
+---
+
+## ⭐ **Simple Fetch API Example**
+
+### GET Request
+
+```javascript
+fetch("https://example.com/data")
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+```
+
+---
+
+## ⭐ POST Request Example
+
+```javascript
+fetch("https://example.com/api", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ name: "John", age: 25 }),
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+```
+
+---
+
+## ⭐ One-Line Interview Version
+
+**The Fetch API is a modern JavaScript method for making HTTP requests and handling responses using Promises.**
+
+<span style="color:green;">================================================================ </span>
+
+ <h3 id="what_is_the_event_loop_and_how_does_it_work"> What is the event loop and how does it work?</h3>
+
+The **Event Loop** is the **mechanism** in JavaScript that **handles asynchronous operations** (like `setTimeout`, promises, or API calls)
+and ensures the code runs in the **right order** — even though JavaScript runs on **a single thread**.
+
+---
+
+### ⚙️ **How It Works (Simple Version):**
+
+1. 🧠 **Call Stack** — where JavaScript runs your main code (line by line).
+2. 📬 **Web APIs / Callback Queue** — where asynchronous tasks wait (like `setTimeout`, `fetch`, etc.).
+3. 🔁 **Event Loop** — keeps checking:
+
+   - “Is the call stack empty?”
+   - If yes, it **takes the next task** from the queue and **runs it**.
+
+---
+
+### 📘 **Example:**
+
+```js
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Inside setTimeout");
+}, 2000);
+
+console.log("End");
+```
+
+🕒 **Output:**
+
+```
+Start
+End
+Inside setTimeout
+```
+
+✅ The event loop lets `setTimeout` run **after** 2 seconds
+— without blocking “End” from running.
+
+---
+
+### 🔄 **In short:**
+
+> The **Event Loop** constantly checks the **call stack** and **callback queue**,
+> making sure JavaScript can handle **asynchronous tasks** smoothly —
+> even though it runs **one thing at a time**.
+
+---
+
+### 🧠 **Easy analogy:**
+
+Think of JavaScript as a **chef** (single thread).
+
+- The **call stack** is the chef’s counter (where they cook).
+- The **event loop** is the waiter who brings new orders when the chef is free.
+- The **callback queue** is the waiting line of dishes to cook next.
+
+<span style="color:green;">================================================================ </span>
+
+ <h3 id="what_are_settimeout_and_setinterval"> What are setTimeout and setInterval?</h3>
+
+### **1. `setTimeout()`**
+
+`setTimeout()` is a JavaScript function used to **run a piece of code after a certain delay** (only once).
+
+#### Example:
+
+```javascript
+setTimeout(() => {
+  console.log("Runs after 2 seconds");
+}, 2000);
+```
+
+---
+
+### **2. `setInterval()`**
+
+`setInterval()` is a JavaScript function used to **repeat a piece of code at a fixed time interval**.
+
+#### Example:
+
+```javascript
+setInterval(() => {
+  console.log("Runs every 2 seconds");
+}, 2000);
+```
+
+---
+
+## ⭐ **Key Differences**
+
+| Feature | setTimeout()     | setInterval()     |
+| ------- | ---------------- | ----------------- |
+| Runs    | Once             | Repeatedly        |
+| Delay   | After given time | Every given time  |
+| Stop    | Not needed       | `clearInterval()` |
+
+---
+
+## ⭐ How to stop the interval?
+
+```javascript
+let id = setInterval(() => {
+  console.log("Running...");
+}, 1000);
+
+setTimeout(() => {
+  clearInterval(id);
+  console.log("Stopped");
+}, 5000);
+```
+
+---
+
+## ⭐ One-line Interview Version
+
+**`setTimeout` runs code once after a delay; `setInterval` runs code repeatedly at fixed intervals.**
+
+<span style="color:green;">================================================================ </span>
+
+ <h3 id="what_is_a_web_worker"> What is a Web Worker?</h3>
+
+A **Web Worker** is a JavaScript feature that allows you to run code **in the background on a separate thread**, without blocking the main UI thread.
+
+This means heavy tasks (like calculations, data processing, loops, etc.) can run in the background while the webpage stays **smooth and responsive**.
+
+---
+
+## ⭐ Why do we use Web Workers?
+
+- Prevent UI from freezing
+- Handle CPU-heavy tasks
+- Improve performance
+- Keep animations, clicks, typing responsive
+
+---
+
+## ⭐ Simple Example
+
+### **main.js**
+
+```javascript
+let worker = new Worker("worker.js");
+
+worker.postMessage("Start");
+
+worker.onmessage = function (event) {
+  console.log("Message from worker:", event.data);
+};
+```
+
+### **worker.js**
+
+```javascript
+onmessage = function (event) {
+  let sum = 0;
+  for (let i = 0; i < 1000000000; i++) {
+    sum += i; // Heavy work
+  }
+  postMessage(sum); // Send result back
+};
+```
+
+---
+
+## ⭐ One-line Interview Version
+
+**A Web Worker allows JavaScript to run background threads so heavy tasks don't block the main UI.**
+
+<span style="color:green;">================================================================ </span>
+
+ <h3 id="what_is_a_service_worker"> What is a Service Worker?</h3>
+
+A **Service Worker** is a background script in the browser that runs **separately from the main webpage** and allows features like:
+
+- **Offline support**
+- **Caching assets & API responses**
+- **Push notifications**
+- **Background sync**
+- **Faster loading (via caching)**
+
+Service Workers act like a **network proxy** between your webpage and the internet.
+They can intercept network requests and decide whether to serve cached data or fetch from the network.
+
+---
+
+## ⭐ Key Features
+
+- Runs **even when the webpage is closed**
+- Cannot access the DOM directly
+- Works on **HTTPS only** (for security)
+- Enables **Progressive Web Apps (PWAs)**
+
+---
+
+## ⭐ Simple Example (Registration)
+
+```javascript
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("sw.js")
+    .then(() => console.log("Service Worker Registered"))
+    .catch((err) => console.log("Error:", err));
+}
+```
+
+### **sw.js (Service Worker file)**
+
+```javascript
+self.addEventListener("install", (event) => {
+  console.log("Service Worker Installed");
+});
+```
+
+---
+
+## ⭐ One-line Interview Version
+
+**A Service Worker is a background script that provides offline support, caching, and push notifications by intercepting network requests.**
+
+<span style="color:green;">================================================================ </span>
+
+ <h3 id="what_is_cors"> What is CORS?</h3>
+
+**CORS (Cross-Origin Resource Sharing)** is a browser security feature that controls whether a web page from **one origin** is allowed to request resources (API, images, data) from a **different origin**.
+
+An _origin_ means:
+
+- **Protocol** (http/https)
+- **Domain** (example.com)
+- **Port** (3000, 8000)
+
+Example of different origins:
+
+- `http://example.com` → `https://api.example.com`
+- `http://localhost:3000` → `http://localhost:8000`
+
+By default, browsers **block cross-origin requests** for security reasons.
+
+CORS allows the server to say:
+
+> “It’s okay. This website is allowed to access my resources.”
+
+This is done using the header:
+
+```
+Access-Control-Allow-Origin: *
+```
+
+or a specific domain.
+
+---
+
+## ⭐ Why CORS Exists?
+
+To **protect users** from malicious websites trying to access another website's data without permission.
+
+---
+
+## ⭐ Simple Example
+
+### If a frontend calls an API from another origin:
+
+```javascript
+fetch("https://api.example.com/data");
+```
+
+### The server must respond with:
+
+```
+Access-Control-Allow-Origin: http://your-website.com
+```
+
+Otherwise → the browser will block the request.
+
+---
+
+## ⭐ One-line Interview Version
+
+**CORS is a browser security system that controls which external websites are allowed to access your server’s resources.**
+
+<span style="color:green;">================================================================ </span>
+
+ <h3 id="what_are_sse"> What are SSE (Server-Sent Events)?</h3>
+
+**Server-Sent Events (SSE)** is a technology that allows a server to **push real-time updates** to the browser over a **single, one-way connection**.
+
+With SSE:
+
+- The **server continuously sends data** to the client
+- The **client cannot send data back** (one-direction only)
+- Uses a simple **HTTP connection**
+- Best for **live updates**, **notifications**, **streaming data**
+
+---
+
+## ⭐ When to use SSE?
+
+- Live score updates
+- Stock price updates
+- Chat message notifications
+- Real-time dashboards
+- Streaming logs
+
+---
+
+## ⭐ Simple SSE Example
+
+### **1. Server side (Node.js example)**
+
+```javascript
+const http = require("http");
+
+http
+  .createServer((req, res) => {
+    res.writeHead(200, {
+      "Content-Type": "text/event-stream",
+      "Cache-Control": "no-cache",
+      Connection: "keep-alive",
+    });
+
+    setInterval(() => {
+      res.write("data: Hello from server!\n\n");
+    }, 2000);
+  })
+  .listen(3000);
+```
+
+---
+
+### **2. Client side (JavaScript)**
+
+```javascript
+let eventSource = new EventSource("http://localhost:3000");
+
+eventSource.onmessage = function (event) {
+  console.log("Message:", event.data);
+};
+```
+
+---
+
+## ⭐ SSE vs WebSockets (easy comparison)
+
+| Feature    | SSE                       | WebSocket          |
+| ---------- | ------------------------- | ------------------ |
+| Direction  | One-way (server → client) | Two-way            |
+| Protocol   | HTTP                      | WebSocket protocol |
+| Use case   | Simple real-time updates  | Real chat, games   |
+| Complexity | Very easy                 | More complex       |
+
+---
+
+## ⭐ One-line Interview Version
+
+**SSE (Server-Sent Events) allow the server to push real-time updates to the client using a simple one-way HTTP connection.**
+
+<span style="color:green;">================================================================ </span>
+
+## ⭐ **What is Long Polling?**
+
+**Long polling** is a technique where the client sends a request to the server and **keeps the connection open** until the server has new data to send.
+
+- If the server has data → it responds immediately
+- If not → it waits (holds the request) until data becomes available
+- After receiving the response, the client immediately sends another request
+
+This creates a **near real-time communication** without using WebSockets.
+
+---
+
+## ⭐ How Long Polling Works (Simple Steps)
+
+1. Client sends a request to the server
+2. Server **does NOT respond immediately**
+3. Server waits until new data is available
+4. Server sends the response back
+5. Client receives data and **makes a new request again**
+
+This cycle continues.
+
+---
+
+## ⭐ Simple Example (JavaScript)
+
+```javascript
+function longPoll() {
+  fetch("/get-updates")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("New update:", data);
+
+      // Send next request immediately
+      longPoll();
+    })
+    .catch((err) => {
+      console.error("Error:", err);
+      setTimeout(longPoll, 2000); // retry after error
+    });
+}
+
+longPoll();
+```
+
+---
+
+## ⭐ When to Use Long Polling?
+
+- Chat applications
+- Live notifications
+- Real-time dashboards
+- When WebSockets are not available
+
+---
+
+## ⭐ One-line Interview Version
+
+**Long polling is a technique where the client keeps a request open until the server has new data, then immediately reconnects for near real-time updates.**
+
+<span style="color:green;">================================================================ </span>
 
 <span style="color:green;">================================================================ </span>
