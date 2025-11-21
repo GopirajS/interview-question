@@ -196,35 +196,66 @@ document.querySelector('#backToTop').addEventListener('click', function(e) {
 - [What is long polling?](#what_is_long_polling)
 
 
-## **6. ES6+ Features **
+
+## **6. ES6+ Features (20 Questions)**
 
 
-* What is a `Set`?
+-  [What are template literals?](#what_are_template_literals)
 
-* What is a `Map`?
+-  [What is destructuring?](#what_is_destructuring)
 
-* What is a WeakMap?
+-  [What are default parameters?](#what_are_default_parameters)
 
-* What is a WeakSet?
+-  [What is a `Set`?](#what_is_a_set)
 
----
+-  [What is a `Map`?](#what_is_a_map)
 
-## **7. Error Handling, Security & Performance**
+-  [What is a WeakMap?](#what_is_a_weakmap)
+
+-  [What is a WeakSet?](#what_is_a_weakset)
+
+-  [What is the rest operator?](#what_is_the_rest_operator)
+
+-  [What is the spread operator?](#what_is_the_spread_operator)
+
+-  [What are modules in JavaScript?](#what_are_modules_in_javascript)
+
+-  [Difference between named and default exports?](#difference_between_named_and_default_exports)
+
+-  [What is dynamic import?](#what_is_dynamic_import)
+
+-  [What is the temporal dead zone?](#what_is_the_temporal_dead_zone)
+
+-  [What is nullish coalescing?](#what_is_nullish_coalescing)
+
+-  [What is optional chaining?](#what_is_optional_chaining)
+
+-  [What is top-level await?](#what_is_top_level_await)
+
+<!-- -  What are private class fields? -->
+<!-- -  What are static class methods? -->
+<!-- -  What are logical assignment operators? -->
 
 
-* What are types of JavaScript errors?
 
-* What is XSS , How do you prevent XSS in JavaScript?
+## **7. Error Handling, Security & Performance (15 Questions)**
 
-* What is CSRF?
+-  What is try/catch?
+-  How do you throw custom errors?
+-  What are types of JavaScript errors?
+-  What causes memory leaks in JS?
+-  How to prevent memory leaks?
+-  What is debouncing used for?
+-  What is throttling used for?
+-  What is XSS?
+-  How do you prevent XSS in JavaScript?
+-  What is CSRF?
+-  What is CSP (Content Security Policy)?
+-  What is lazy loading?
+-  What is code splitting?
+-  What is minification?
+-  How do you optimize JS performance?
 
-* What is CSP (Content Security Policy)?
-
-* What is lazy loading?
-
-* What is code splitting?
-
-* What is minification?
 
 
   <span style="color:green;">================================================================ </span>
@@ -5437,11 +5468,1104 @@ longPoll();
 
 **Long polling is a technique where the client keeps a request open until the server has new data, then immediately reconnects for near real-time updates.**
 
-<span style="color:green;">================================================================ </span>
 
 <span style="color:green;">================================================================ </span>
 
+<h3 id="what_are_template_literals">  What are template literals?  <h3>
 
+
+![Template literal](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*OwdFaZ6A77pHTmwUpFKi0A.png)
+
+**Template literals** are a modern way to create strings in JavaScript.
+They use **backticks** (`` ` ``) instead of quotes, and allow:
+
+1. **Multiline strings**
+2. **String interpolation** (insert variables easily)
+3. **Embedded expressions**
+4. **Tagged templates** (advanced use)
+
+---
+
+## ⭐ Example 1: Basic Template Literal
+
+```javascript
+const name = "John";
+const message = `Hello, ${name}!`;
+
+console.log(message); // Hello, John!
+```
+
+✔ `${...}` lets you insert variables directly.
+
+---
+
+## ⭐ Example 2: Multiline Strings
+
+```javascript
+const msg = `
+This is line 1
+This is line 2
+`;
+
+console.log(msg);
+```
+
+---
+
+## ⭐ Example 3: Expressions inside `${ }`
+
+```javascript
+const a = 5;
+const b = 10;
+
+console.log(`Total: ${a + b}`);  
+// Total: 15
+```
+
+---
+
+## ⭐ One-line interview answer
+
+**Template literals are strings written using backticks that allow variable interpolation, multiline strings, and embedded expressions using `${ }`.**
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_is_destructuring">  What is destructuring?  <h3>
+
+
+
+![destructuring](https://miro.medium.com/v2/resize:fit:720/format:webp/1*KJ-Mbii6TVxjdQHPCJHvCw.jpeg)
+
+
+**Destructuring** is a feature in JavaScript that allows you to **extract values from arrays or objects and assign them to variables in a clean, short syntax.**
+
+It makes your code shorter and easier to read.
+
+---
+
+## ⭐ **1. Array Destructuring**
+
+```javascript
+const colors = ["red", "green", "blue"];
+
+const [first, second] = colors;
+
+console.log(first);  // red
+console.log(second); // green
+```
+
+---
+
+## ⭐ **2. Object Destructuring**
+
+```javascript
+const user = {
+  name: "Alice",
+  age: 25,
+};
+
+const { name, age } = user;
+
+console.log(name); // Alice
+console.log(age);  // 25
+```
+
+---
+
+## ⭐ **3. Renaming Variables during Destructuring**
+
+```javascript
+const { name: username } = user;
+
+console.log(username); // Alice
+```
+
+---
+
+## ⭐ **4. Default Values**
+
+```javascript
+const { city = "Unknown" } = user;
+
+console.log(city); // Unknown
+```
+
+---
+
+## ⭐ One-Line Interview Version
+
+**Destructuring is a shorthand way to extract values from arrays or objects into variables using a clean, structured syntax.**
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_are_default_parameters">  What are default parameters?  <h3>
+
+
+![Default Parameters]()
+
+**Default parameters** allow you to set a **default value** for a function’s argument **if no value is provided** or if the value is `undefined`.
+
+This prevents errors and avoids extra `if` checks inside functions.
+
+---
+
+## ⭐ Example 1: Basic default parameter
+
+```javascript
+function greet(name = "Guest") {
+  console.log(`Hello, ${name}!`);
+}
+
+greet();            // Hello, Guest!
+greet("John");      // Hello, John!
+```
+
+---
+
+## ⭐ Example 2: Default parameter with expressions
+
+```javascript
+function add(a, b = 10) {
+  return a + b;
+}
+
+console.log(add(5));    // 15
+console.log(add(5, 3)); // 8
+```
+
+---
+
+## ⭐ Example 3: Default parameter with functions
+
+```javascript
+function log(value, fn = console.log) {
+  fn(value);
+}
+
+log("Hi"); // prints using console.log
+```
+
+---
+
+## ⭐ One-line interview version
+
+**Default parameters let you assign a fallback value to function arguments when they are not provided or are undefined.**
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_is_a_set">  What is a `Set`?  <h3>
+
+
+A **Set** in JavaScript is a built-in object that stores **unique values**.
+It automatically **removes duplicates** and keeps each value only once.
+
+---
+
+## ⭐ Key Features
+
+✔ Stores **unique** values (no duplicates)
+✔ Can store **any data type** (numbers, strings, objects, etc.)
+✔ Maintains **insertion order**
+✔ Fast lookups (like a mathematical set)
+
+---
+
+## ⭐ Example: Creating a Set
+
+```javascript
+const numbers = new Set([1, 2, 3, 3, 4]);
+
+console.log(numbers);  
+// Set(4) { 1, 2, 3, 4 }  ← duplicates removed
+```
+
+---
+
+## ⭐ Example: Adding values
+
+```javascript
+const set = new Set();
+set.add(10);
+set.add(20);
+set.add(10); // duplicate, ignored
+
+console.log(set); // Set(2) { 10, 20 }
+```
+
+---
+
+## ⭐ Checking if a value exists
+
+```javascript
+console.log(set.has(10)); // true
+console.log(set.has(30)); // false
+```
+
+---
+
+## ⭐ Removing values
+
+```javascript
+set.delete(10);
+console.log(set); // Set { 20 }
+```
+
+---
+
+## ⭐ Looping over a Set
+
+```javascript
+for (const value of set) {
+  console.log(value);
+}
+```
+
+---
+
+## ⭐ One-line interview version
+
+**A Set is a JavaScript object that stores unique values and automatically removes duplicates, providing fast lookups and clean data collection.**
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_is_a_map">  What is a `Map`?  <h3>
+
+
+A **Map** in JavaScript is a collection of **key-value pairs** where:
+
+✔ **Keys can be any data type** (not only strings)
+✔ Maintains **insertion order**
+✔ Provides faster lookups and better control compared to plain objects
+✔ Has built-in methods like `set()`, `get()`, `delete()`, etc.
+
+---
+
+## ⭐ Example: Creating a Map
+
+```javascript
+const map = new Map();
+map.set("name", "John");
+map.set(10, "Number key");
+map.set({ id: 1 }, "Object key");
+
+console.log(map);
+```
+
+---
+
+## ⭐ Getting values
+
+```javascript
+console.log(map.get("name")); // John
+console.log(map.get(10));     // Number key
+```
+
+---
+
+## ⭐ Checking existence
+
+```javascript
+console.log(map.has("name")); // true
+```
+
+---
+
+## ⭐ Removing values
+
+```javascript
+map.delete(10);
+```
+
+---
+
+## ⭐ Looping over a Map
+
+```javascript
+for (const [key, value] of map) {
+  console.log(key, value);
+}
+```
+
+---
+
+## ⭐ Map vs Object (important for interviews)
+
+| Feature     | Map                            | Object                 |
+| ----------- | ------------------------------ | ---------------------- |
+| Key types   | Any type                       | Only strings/symbols   |
+| Order       | Maintains                      | Not guaranteed         |
+| Size        | `map.size`                     | `Object.keys().length` |
+| Performance | Faster for frequent add/remove | Not optimized          |
+| Iteration   | Easy, built-in                 | Requires extra steps   |
+
+---
+
+## ⭐ One-line interview version
+
+**A Map is a key-value data structure in JavaScript where keys can be any type, and it preserves insertion order with efficient retrieval.**
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_is_a_weakmap">  What is a WeakMap?  <h3>
+
+A **WeakMap** is a special kind of Map where:
+
+1. **Keys must be objects only** (no strings, no numbers).
+2. **Keys are weakly referenced**, meaning if the object key is no longer used anywhere else, it gets **automatically garbage-collected**.
+3. It helps prevent **memory leaks**.
+
+---
+
+## ⭐ Key Differences from Map
+
+| Feature            | Map                          | WeakMap                            |
+| ------------------ | ---------------------------- | ---------------------------------- |
+| Key types          | Any (string, number, object) | **Only objects**                   |
+| Garbage collection | No                           | **Yes (auto removes unused keys)** |
+| Iteration          | Yes (`for...of`)             | **No iteration allowed**           |
+| Size property      | map.size                     | **No size**                        |
+
+---
+
+## ⭐ Example: Using WeakMap
+
+```javascript
+const weakMap = new WeakMap();
+
+let user = { name: "Alice" };
+
+weakMap.set(user, "Some data");
+
+console.log(weakMap.get(user)); // "Some data"
+
+// Remove the only reference to the object
+user = null;
+
+// Now the object and its value can be garbage-collected automatically
+```
+
+✔ Useful for storing **private data** related to objects
+✔ Helps avoid **memory leaks** when objects are removed
+
+---
+
+## ⭐ One-line interview version
+
+**A WeakMap is a Map that only accepts object keys and automatically garbage-collects unused key objects, preventing memory leaks.**
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_is_a_weakset">  What is a WeakSet?  <h3>
+
+A **WeakSet** is similar to a Set, but with two key differences:
+
+1. **It only stores objects** (no strings, numbers, booleans).
+2. The objects inside it are **weakly referenced**, meaning if the object is no longer used anywhere else, it is **automatically garbage-collected**.
+
+---
+
+## ⭐ Key Differences: Set vs WeakSet
+
+| Feature            | Set              | WeakSet          |
+| ------------------ | ---------------- | ---------------- |
+| Value types        | Any type         | **Only objects** |
+| Garbage collection | No               | **Yes**          |
+| Iteration          | Yes (`for...of`) | **No iteration** |
+| Size property      | set.size         | **No size**      |
+
+---
+
+## ⭐ Example: Using WeakSet
+
+```javascript
+const weakSet = new WeakSet();
+
+let obj1 = { name: "Alice" };
+let obj2 = { name: "Bob" };
+
+weakSet.add(obj1);
+weakSet.add(obj2);
+
+console.log(weakSet.has(obj1)); // true
+
+obj1 = null; // remove reference
+
+// Now obj1 can be garbage-collected automatically
+```
+
+✔ Good for tracking objects without preventing garbage collection
+✔ Useful for marking objects as “processed,” “visited,” etc.
+
+---
+
+## ⭐ One-line interview version
+
+**A WeakSet is a Set that stores only objects and automatically removes them when they are no longer referenced elsewhere, helping prevent memory leaks.**
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_is_the_rest_operator">  What is the rest operator?  <h3>
+
+
+The **rest operator (`...`)** allows you to collect **the remaining values** of an array or object into a single variable.
+
+It is used in **function parameters**, **arrays**, and **objects** to gather leftover values.
+
+It looks like spread (`...`), but **rest collects** while **spread expands**.
+
+---
+
+# ✅ **1. Rest operator in function parameters**
+
+Collects all remaining arguments into an array.
+
+```javascript
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b);
+}
+
+console.log(sum(1, 2, 3, 4)); // 10
+```
+
+✔ `numbers` becomes: `[1, 2, 3, 4]`
+
+---
+
+# ✅ **2. Rest operator in array destructuring**
+
+```javascript
+const [first, ...others] = [10, 20, 30, 40];
+
+console.log(first);   // 10
+console.log(others);  // [20, 30, 40]
+```
+
+---
+
+# ✅ **3. Rest operator in object destructuring**
+
+```javascript
+const user = { name: "John", age: 25, city: "NY" };
+
+const { name, ...details } = user;
+
+console.log(name);     // John
+console.log(details);  // { age: 25, city: "NY" }
+```
+
+---
+
+# ⭐ One-line interview version
+
+**The rest operator (`...`) collects the remaining elements into an array or object, often used in function parameters and destructuring.**
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_is_the_spread_operator">  What is the spread operator?  <h3>
+
+
+The **spread operator (`...`)** is used to **expand** (spread out) elements of an array, string, or object into individual items.
+
+It is the opposite of the **rest operator**.
+
+---
+
+# ✅ **1. Spread in Arrays**
+
+### ✔ Copying an array
+
+```javascript
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1];
+
+console.log(arr2); // [1, 2, 3]
+```
+
+---
+
+### ✔ Merging arrays
+
+```javascript
+const a = [1, 2];
+const b = [3, 4];
+
+const merged = [...a, ...b];
+console.log(merged); // [1, 2, 3, 4]
+```
+
+---
+
+# ✅ **2. Spread in Objects**
+
+### ✔ Cloning an object
+
+```javascript
+const user = { name: "John", age: 20 };
+const copy = { ...user };
+
+console.log(copy); // { name: "John", age: 20 }
+```
+
+---
+
+### ✔ Merging objects
+
+```javascript
+const obj1 = { a: 1 };
+const obj2 = { b: 2 };
+
+const combined = { ...obj1, ...obj2 };
+console.log(combined); // { a: 1, b: 2 }
+```
+
+---
+
+# ✅ **3. Spread in Function Calls**
+
+```javascript
+function add(a, b, c) {
+  return a + b + c;
+}
+
+const numbers = [1, 2, 3];
+console.log(add(...numbers)); // 6
+```
+
+---
+
+# ⭐ Rest vs Spread (Interview Point)
+
+| Operator           | Purpose                              |
+| ------------------ | ------------------------------------ |
+| **Rest (`...`)**   | Collects items into an array/object  |
+| **Spread (`...`)** | Expands items out of an array/object |
+
+Example:
+
+```javascript
+const [first, ...rest] = [1, 2, 3]; // rest collects
+const arr = [...rest];              // spread expands
+```
+
+---
+
+# ⭐ One-line interview version
+
+**The spread operator (`...`) expands elements of an array or object, making it easy to copy, merge, or pass values.**
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_are_modules_in_javascript">  What are modules in JavaScript?  <h3>
+
+![Modules](https://cdn.hashnode.com/res/hashnode/image/upload/v1589522328379/zyypPPNtV.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp)
+
+**Modules** in JavaScript are files that contain code which is **isolated**, **reusable**, and can be **imported or exported** to other files.
+
+Modules help keep code organized, prevent global variable pollution, and allow splitting large programs into smaller pieces.
+
+---
+
+## ⭐ Why do we use modules?
+
+✔ Better code organization
+✔ Avoids naming conflicts
+✔ Reusable components
+✔ Cleaner structure for big applications
+✔ Encourages separation of concerns
+
+---
+![Modules](https://cdn.hashnode.com/res/hashnode/image/upload/v1589460170784/l8WMLy5Sv.png?auto=compress,format&format=webp)
+
+
+# ✅ **1. Exporting from a module**
+
+### ✔ Named export
+
+```javascript
+// file: math.js
+export function add(a, b) {
+  return a + b;
+}
+```
+
+### ✔ Default export
+
+```javascript
+// file: math.js
+export default function multiply(a, b) {
+  return a * b;
+}
+```
+
+---
+
+# ✅ **2. Importing a module**
+
+### ✔ Import named export
+
+```javascript
+import { add } from './math.js';
+
+console.log(add(2, 3)); // 5
+```
+
+---
+
+### ✔ Import default export
+
+```javascript
+import multiply from './math.js';
+
+console.log(multiply(2, 3)); // 6
+```
+
+---
+
+# ⭐ Browser Example (ES Modules)
+
+```html
+<script type="module" src="app.js"></script>
+```
+
+---
+
+# ⭐ Important Interview Points
+
+* JavaScript modules use **import/export syntax (ES6)**
+* They run in **strict mode** automatically
+* Each module has its **own scope**
+* They work only with `type="module"` or in bundlers (Webpack, Vite, etc.)
+
+---
+
+# ⭐ One-line interview version
+
+**Modules in JavaScript are files that export and import code so it can be reused, organized, and kept separate from the global scope.**
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="difference_between_named_and_default_exports">  Difference between named and default exports?  <h3>
+
+
+JavaScript modules allow you to export code in **two ways**:
+
+* **Named exports** (many per file)
+* **Default export** (only one per file)
+
+---
+
+# ✅ **1. Named Exports**
+
+### ✔ You can export **multiple** things
+
+### ✔ Must use the **same name** when importing
+
+### ✔ Wrapped inside `{}` when importing
+
+### Example
+
+```javascript
+// file: utils.js
+export const PI = 3.14;
+export function add(a, b) {
+  return a + b;
+}
+```
+
+Importing:
+
+```javascript
+import { PI, add } from './utils.js';
+```
+
+---
+
+# ✅ **2. Default Export**
+
+### ✔ Only **one default export** per file
+
+### ✔ Can be imported with **any name**
+
+### ✔ No `{}` required
+
+### Example
+
+```javascript
+// file: utils.js
+export default function multiply(a, b) {
+  return a * b;
+}
+```
+
+Importing:
+
+```javascript
+import m from './utils.js'; // "m" can be any name
+```
+
+---
+
+# ⭐ **Key Differences Table**
+
+| Feature        | Named Export               | Default Export             |
+| -------------- | -------------------------- | -------------------------- |
+| Number allowed | Multiple                   | Only one                   |
+| Import name    | Must match the export name | Can be **any** name        |
+| Import syntax  | `import { name }`          | `import name`              |
+| Usage          | Export many utilities      | Export main value/function |
+
+---
+
+# ⭐ One-line interview answer
+
+**Named exports allow exporting multiple specific items, while default exports allow exporting a single main value that can be imported with any name.**
+
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_is_dynamic_import">  What is dynamic import?  <h3>
+
+
+**Dynamic import** allows you to load a module **only when you need it**, instead of loading it at the start.
+It uses the `import()` function, which returns a **Promise**.
+
+This helps with:
+
+✔ Lazy loading
+✔ Faster initial load time
+✔ Loading modules conditionally
+✔ Code-splitting (used in React, Webpack, Vite, etc.)
+
+---
+
+## ⭐ **Basic Example**
+
+```javascript
+import("./math.js").then(module => {
+  console.log(module.add(2, 3));
+});
+```
+
+---
+
+## ⭐ **Using async/await**
+
+```javascript
+async function loadMath() {
+  const math = await import("./math.js");
+  console.log(math.add(5, 5));
+}
+
+loadMath();
+```
+
+---
+
+## ⭐ **When do we use dynamic imports?**
+
+✔ When a module is needed **only in certain conditions**
+✔ To improve **performance / page speed**
+✔ To load large modules **on demand**
+✔ In frameworks (React lazy(), Vue async components)
+
+---
+
+## ⭐ Example: Conditional loading
+
+```javascript
+if (user.isAdmin) {
+  const adminModule = await import("./adminPanel.js");
+  adminModule.showAdminPanel();
+}
+```
+
+---
+
+## ⭐ One-line interview version
+
+**Dynamic import (`import()`) allows you to load modules on demand, returning a Promise and helping with lazy loading and code-splitting.**
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_is_the_temporal_dead_zone">  What is the temporal dead zone?  <h3>
+
+
+![Temporal Dead Zone](https://miro.medium.com/v2/resize:fit:720/format:webp/1*Nvxnq-bqM1iyTqwO_clFYQ.jpeg)
+
+The **Temporal Dead Zone (TDZ)** is the period between:
+
+1. **When a variable is hoisted**, and
+2. **When it is actually assigned a value**
+
+During this time, the variable **exists** but **cannot be accessed**.
+If you try to use it, JavaScript throws a **ReferenceError**.
+
+TDZ applies to variables declared with:
+
+* `let`
+* `const`
+
+(But **not** `var`.)
+
+---
+
+## ⭐ Example showing TDZ
+
+```javascript
+console.log(a);  // ❌ ReferenceError (TDZ)
+let a = 5;       // Declaration happens here
+```
+
+Why?
+Because `a` is hoisted but **not initialized** until the `let a = 5` line.
+
+---
+
+## ⭐ TDZ with `const`
+
+```javascript
+console.log(x);  // ❌ ReferenceError
+const x = 10;
+```
+
+---
+
+## ⭐ TDZ does NOT apply to `var`
+
+```javascript
+console.log(b); // undefined (not TDZ)
+var b = 20;
+```
+
+`var` is hoisted and initialized with `undefined`, so no TDZ.
+
+---
+
+## ⭐ Why does TDZ exist?
+
+To prevent bugs and make code more predictable.
+
+It ensures you **don’t use a variable before its initialization**, even though it is hoisted.
+
+---
+
+## ⭐ One-line interview version
+
+**The Temporal Dead Zone is the phase where `let` and `const` variables are hoisted but not initialized, causing a ReferenceError if accessed before their declaration.**
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_is_nullish_coalescing">  What is nullish coalescing?  <h3>
+
+
+![Nullish](https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F1zsfrrqsjxrby1lks02d.png)
+
+
+The **nullish coalescing operator (`??`)** returns the **right-hand value only when the left-hand value is *nullish***.
+
+**Nullish means only two things:**
+
+* `null`
+* `undefined`
+
+It **does NOT trigger** for:
+
+* `0`
+* `false`
+* `""` (empty string)
+* `NaN`
+
+---
+
+## ✅ Example
+
+```javascript
+let x = null;
+let result = x ?? "default value";
+console.log(result); // "default value"
+```
+
+---
+
+## ❗ Compare with logical OR (`||`)
+
+`||` treats many values as “falsey”:
+`0, false, "", NaN, null, undefined`
+
+```javascript
+0 || 100;   // 100  (because 0 is falsey)
+0 ?? 100;   // 0    (because 0 is NOT nullish)
+```
+
+---
+
+## ⭐ Summary (Interview Ready)
+
+**Nullish coalescing (`??`) returns the right-side value only if the left side is `null` or `undefined`.**
+It’s safer than `||` when values like `0`, `false`, or `""` are valid and should not trigger fallback values.
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_is_optional_chaining">  What is optional chaining?  <h3>
+
+
+## ⭐ **What is Optional Chaining (`?.`)?**
+
+
+![optional chaining](https://miro.medium.com/v2/resize:fit:4800/format:webp/1*TKBbmjEeo5It3AK_NPbAoA.jpeg)
+
+**Optional chaining** allows you to safely access **nested object properties** **without causing an error** if something is `null` or `undefined`.
+
+Instead of throwing:
+
+```
+TypeError: Cannot read property 'x' of undefined
+```
+
+JavaScript returns **undefined**.
+
+---
+
+## ⭐ Example 1 — Without optional chaining  
+```javascript
+let user = {};
+console.log(user.address.city); 
+// ❌ Error: Cannot read property 'city' of undefined
+```
+
+---
+
+## ⭐ Example 2 — With optional chaining  
+```javascript
+let user = {};
+console.log(user.address?.city); 
+// ✅ undefined (no error)
+```
+
+---
+
+## ⭐ How it works  
+`obj?.prop`  
+→ Returns `undefined` **if `obj` is null or undefined`**  
+→ Otherwise, returns `obj.prop`
+
+---
+
+## ⭐ Optional chaining with function calls  
+```javascript
+user.sayHello?.();  
+// Only calls sayHello() if it exists
+```
+
+---
+
+## ⭐ Optional chaining with arrays  
+```javascript
+let data = null;
+console.log(data?.[0]);  
+// undefined
+```
+
+---
+
+## ⭐ Interview-ready one-liner  
+**Optional chaining lets you safely access deeply-nested properties without errors by returning `undefined` when a value is null or undefined.**
+
+
+
+<span style="color:green;">================================================================ </span>
+
+<h3 id="what_is_top_level_await">  What is top-level await?  <h3>
+
+
+**Top-level `await`** means you can use the `await` keyword **directly at the top level of a module**, without wrapping it inside an async function.
+
+This only works in **ES modules** (`.mjs` files or `"type": "module"` in package.json).
+
+Before this feature, `await` was allowed **only inside async functions**.
+
+---
+
+## ⭐ Why is it useful?
+
+It lets your module **pause execution** until a Promise finishes—perfect for:
+
+* loading configuration
+* reading files
+* fetching data
+* dynamic imports
+* database connections
+
+All **before** the rest of the module runs.
+
+---
+
+## ⭐ Example (Without top-level await)
+
+Before:
+
+```javascript
+(async function() {
+  const data = await fetch('/api/user');
+  console.log(data);
+})();
+```
+
+---
+
+## ⭐ Example (With top-level await)
+
+```javascript
+const response = await fetch('/api/user');
+const data = await response.json();
+
+console.log(data);
+```
+
+No function wrapper needed.
+
+---
+
+## ⭐ Example — dynamic import with top-level await
+
+```javascript
+const module = await import('./math.js');
+console.log(module.add(2, 3));
+```
+
+---
+
+## ⭐ Interview one-liner
+
+**Top-level await lets you use `await` directly in ES modules, allowing the module to pause while waiting for async operations without wrapping code in an async function.**
+
+
+<span style="color:green;">================================================================ </span>
+
+<!-- 
 # ✅ **What is a `Set`?**
 
 A **Set** is a collection of **unique values** — it **cannot contain duplicates**.
@@ -5844,4 +6968,4 @@ If you want, I can show how to minify JS using Webpack, Vite, or a single CLI to
 
 
 <span style="color:green;">================================================================ </span>
-
+ -->
