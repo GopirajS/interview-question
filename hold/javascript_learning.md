@@ -285,7 +285,7 @@ Just tell me!
 
 <h3 id="what_are_javascript_data_types">What are JavaScript data types?</h3>
 
-<img width="720" height="536" alt="Image" src="https://github.com/user-attachments/assets/97458b53-5ea6-4ecf-9ea5-2e60c50e6efc" />
+<img  alt="Image" src="https://github.com/user-attachments/assets/97458b53-5ea6-4ecf-9ea5-2e60c50e6efc" />
 
 JavaScript has **8 main data types**. They fall into two categories: **primitive** and **non-primitive**.
 
@@ -421,7 +421,7 @@ let b = 20;
 
 <h3 id="what_is_hoisting">What is hoisting?</h3>
 
-<img width="800" height="400" alt="Image" src="https://github.com/user-attachments/assets/5bdb9cf4-d3d7-49fa-b33e-52758cfe6f12" />
+<img  alt="Image" src="https://github.com/user-attachments/assets/5bdb9cf4-d3d7-49fa-b33e-52758cfe6f12" />
 
 
 **Hoisting** is JavaScript’s behavior of **moving variable and function declarations to the top of their scope** _before the code executes_.
@@ -681,7 +681,7 @@ Number.isNaN(value);
 <h3 id="what_is_strict_mode">What is strict mode?</h3>
 
 
-<img width="574" height="364" alt="Image" src="https://github.com/user-attachments/assets/825121f6-7f2e-42fc-ab37-d40c69f4c18a" /> 
+<img  alt="Image" src="https://github.com/user-attachments/assets/825121f6-7f2e-42fc-ab37-d40c69f4c18a" /> 
 
 
 
@@ -761,7 +761,7 @@ Some operations that would normally fail silently now throw real errors.
 
 <h3 id="what_is_the_difference_between_value_and_reference_types">What is the difference between `value` and `reference` types?</h3>
 
-<img width="860" height="287" alt="Image" src="https://github.com/user-attachments/assets/0725f97a-7202-4df8-ad46-4ea5a651490e" />
+<img  alt="Image" src="https://github.com/user-attachments/assets/0725f97a-7202-4df8-ad46-4ea5a651490e" />
 
 
 
@@ -2319,7 +2319,7 @@ A higher-order function is any function that **accepts a function**, **returns a
 
 ![img](https://drive.usercontent.google.com/download?id=1Rd10TvYK5376M4dLzYk42y3S9VsDNk-f&export=view)
 
-<img width="1842" height="721" alt="Image" src="https://github.com/user-attachments/assets/50ef5c17-db3b-4a44-9060-08083cebeb85" />
+<img  alt="Image" src="https://github.com/user-attachments/assets/50ef5c17-db3b-4a44-9060-08083cebeb85" />
 
 **Currying** is a technique where a function that takes multiple arguments is transformed into **a series of functions**, each taking **one argument at a time**.
 
