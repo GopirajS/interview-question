@@ -144,6 +144,8 @@ document.querySelector('#backToTop').addEventListener('click', function(e) {
 
 - [How do you create DOM elements dynamically?](#how_do_you_create_dom_elements_dynamically)
 
+- [What is Event Propagation and Event Delegation?](#what_is_event_propagation_and_event_delegation)
+
 - [What is event bubbling?](#what_is_event_bubbling)
 
 - [What is event capturing?](#what_is_event_capturing)
@@ -186,6 +188,8 @@ document.querySelector('#backToTop').addEventListener('click', function(e) {
 - [What is a Service Worker?](#what_is_a_service_worker)
 
 - [What is CORS?](#what_is_cors)
+
+- [What is SOP (Same Origin Policy)?](#same_origin_policy)
 
 - [What are SSE (Server-Sent Events)?](#what_are_sse)
 
@@ -4021,6 +4025,8 @@ users.sort((a, b) => {
 
 # ✅ What is array flattening?
 
+<img  alt="Image" src="https://github.com/user-attachments/assets/e8abffe7-c467-432a-9751-08eb8ef8455b" />
+
 **Array flattening** means converting a **nested (multi-dimensional) array** into a **single-level array**.
 
 Example of a nested array:
@@ -4094,6 +4100,8 @@ JSON.parse("[" + arr.toString() + "]");
 <span style="color:green;">================================================================ </span>
 
 <h3 id="what_is_the_dom">  What is the DOM? </h3>
+
+<img  alt="Image" src="https://github.com/user-attachments/assets/2bb73038-6391-43a8-a7cd-de5a72dc3876" />
 
 **DOM (Document Object Model)** is a **programming interface** that represents a web page as a **tree of objects**.
 
@@ -4551,9 +4559,198 @@ If you want, I can show:
 
 <span style="color:green;">================================================================ </span>
 
+<h3 id="what_is_event_propagation_and_event_delegation">what is event propagation and event delegation?</h3>
+
+![Image](https://github.com/user-attachments/assets/9b30f497-5c4c-465c-8c87-e659faedb713)
+
+# ✅ **What is Event Propagation?**
+
+**Event propagation** is the way an event travels through the DOM (HTML elements).
+
+When you click a button inside a `<div>` inside a `<body>`:
+
+```
+<body>
+  <div>
+    <button>Click</button>
+  </div>
+</body>
+```
+
+The event passes through 3 phases:
+
+---
+
+## ⭐ **1. Capturing Phase (Top → Down)**
+
+Browser checks if any parent wants to catch the event *on the way down*.
+
+```
+Window → Document → Body → Div → Button
+```
+
+---
+
+## ⭐ **2. Target Phase**
+
+The event reaches the actual clicked element.
+
+```
+Button (target)
+```
+
+---
+
+## ⭐ **3. Bubbling Phase (Bottom → Up)**
+
+Event travels back upward.
+
+```
+Button → Div → Body → Document → Window
+```
+
+---
+
+## ✔ Simple ASCII Diagram
+
+```
+         CAPTURING (down)
+Window ------------------------↓
+Document ----------------------↓
+Body --------------------------↓
+Div ---------------------------↓
+Button  <--- TARGET --->       (You clicked here)
+Div ---------------------------↑
+Body --------------------------↑
+Document ----------------------↑
+Window ------------------------↑
+         BUBBLING (up)
+```
+
+---
+
+# ⭐ Simple Example of Event Propagation
+
+```html
+<div id="parent" style="padding:20px; background:orange;">
+  Parent
+  <button id="child" style="margin:20px;">Child Button</button>
+</div>
+
+<script>
+document.getElementById("parent").addEventListener("click", () => {
+  console.log("Parent clicked");
+});
+
+document.getElementById("child").addEventListener("click", () => {
+  console.log("Child clicked");
+});
+</script>
+```
+
+### Output when clicking the button:
+
+```
+Child clicked
+Parent clicked
+```
+
+Because the event **bubbles upward** from button → div.
+
+---
+
+# ✅ **What is Event Delegation?**
+
+**Event Delegation = Parent handles the events of children**
+Instead of adding event listener to every child.
+
+---
+
+## 🔥 Real-Life Example
+
+Imagine:
+
+* There is **1 big table** (parent)
+* Many **customer seats** (child elements)
+* Instead of placing **1 waiter at every seat**,
+  we put **1 waiter for the whole table**.
+
+Whenever a customer raises hand →
+waiter checks **which seat (target)** belongs.
+
+---
+
+## ⭐ ASCII Diagram for Event Delegation
+
+```
+Parent (Table)
+|
+|-- Child 1 (seat)
+|-- Child 2
+|-- Child 3
+|-- Child 4
+```
+
+**One waiter (one event listener) handles all seats.**
+
+---
+
+# ✔ Simple Event Delegation Example
+
+### ❌ Without Delegation (BAD)
+
+```js
+button1.addEventListener("click", handler)
+button2.addEventListener("click", handler)
+button3.addEventListener("click", handler)
+```
+
+### ✅ With Delegation (GOOD)
+
+```html
+<ul id="list">
+  <li>Apple</li>
+  <li>Orange</li>
+  <li>Banana</li>
+</ul>
+
+<script>
+document.getElementById("list").addEventListener("click", function(event) {
+  console.log("You clicked:", event.target.textContent);
+});
+</script>
+```
+
+Only **one listener** handles **all list items**.
+
+---
+
+# ⭐ Why Event Delegation is Useful?
+
+| Problem                            | Solution                    |
+| ---------------------------------- | --------------------------- |
+| Too many child elements            | One parent listener         |
+| Child elements created dynamically | Parent still catches clicks |
+| Better performance                 | Faster, fewer listeners     |
+
+---
+
+# ⭐ Full Interview Answer (Short)
+
+**Event propagation** is how events travel through the DOM:
+
+* capturing (top → down)
+* target
+* bubbling (down → up)
+
+**Event delegation** uses bubbling: a parent handles events for children using `event.target`.
+
+
+<span style="color:green;">================================================================ </span>
+
   <h3 id="what_is_event_bubbling">  What is event bubbling? </h3>
 
-  <img  alt="Image" src="https://github.com/user-attachments/assets/97f07e09-e1a0-4342-962a-08551c3c344f" />
+<img  alt="Image" src="https://github.com/user-attachments/assets/51397783-4a7a-4dc0-8b55-228a83c6757f" />
 
 **Event bubbling means that when an event happens on an element, it first runs on that element and then moves upward through all its parent elements.**
 
@@ -4622,7 +4819,6 @@ event.stopPropagation();
 
 <h3 id="what_is_event_capturing">  What is event capturing? </h3>
 
-<img  alt="Image" src="https://github.com/user-attachments/assets/97f07e09-e1a0-4342-962a-08551c3c344f" />
 
 **Event capturing** is the opposite of bubbling.
 In capturing, the event starts at the **top parent** and moves **downward** to the target element.
@@ -5155,6 +5351,8 @@ getData();
 
 <h3 id="what_is_callback_hell_how_do_you_avoid_callback_hell"> What is callback hell. How do you avoid callback hell?</h3>
 
+<img  alt="Image" src="https://github.com/user-attachments/assets/acce4d8c-2cba-4f4c-9c58-c232f878e60f" />
+
 **Callback Hell** is a situation in JavaScript where multiple callbacks are nested inside each other, creating code that looks messy, is hard to read, and difficult to maintain.
 It happens when you perform many asynchronous tasks one after another.
 
@@ -5522,6 +5720,8 @@ setTimeout(() => {
 
  <h3 id="what_is_a_web_worker"> What is a Web Worker?</h3>
 
+<img  alt="Image" src="https://github.com/user-attachments/assets/2e99d044-bf5a-4597-b503-02533540c183" />
+
 A **Web Worker** is a JavaScript feature that allows you to run code **in the background on a separate thread**, without blocking the main UI thread.
 
 This means heavy tasks (like calculations, data processing, loops, etc.) can run in the background while the webpage stays **smooth and responsive**.
@@ -5573,6 +5773,8 @@ onmessage = function (event) {
 
  <h3 id="what_is_a_service_worker"> What is a Service Worker?</h3>
 
+ ![Image](https://github.com/user-attachments/assets/1f372e1e-2f9a-4390-9691-c27bcf7d64ff)
+
 A **Service Worker** is a background script in the browser that runs **separately from the main webpage** and allows features like:
 
 - **Offline support**
@@ -5623,6 +5825,8 @@ self.addEventListener("install", (event) => {
 <span style="color:green;">================================================================ </span>
 
  <h3 id="what_is_cors"> What is CORS?</h3>
+
+<img  alt="Image" src="https://github.com/user-attachments/assets/37d33742-d8ad-433c-be95-c22135ccb9a3" />
 
 **CORS (Cross-Origin Resource Sharing)** is a browser security feature that controls whether a web page from **one origin** is allowed to request resources (API, images, data) from a **different origin**.
 
@@ -5683,7 +5887,67 @@ Otherwise → the browser will block the request.
 
 <span style="color:green;">================================================================ </span>
 
+<h3 id="same_origin_policy">What is SOP (Same Origin Policy)?</h3>
+
+<img  alt="Image" src="https://github.com/user-attachments/assets/e484c0d6-3645-4b18-bedb-99945533d543" />
+
+
+**Same Origin Policy (SOP)** is a security rule used by web browsers.
+It **prevents one website from accessing data on another website** unless they have the **same origin**.
+
+An **origin** is defined by 3 things:
+
+1. **Protocol** (http, https)
+2. **Domain / Host** (example.com)
+3. **Port** (80, 443, etc.)
+
+If any one of these is different, the origins are different.
+SOP protects users by stopping malicious websites from stealing sensitive data.
+
+---
+
+# 👉 **Short Interview Version**
+
+“Same Origin Policy is a browser security mechanism that blocks scripts from one website from reading or interacting with content from another website unless both sites share the same protocol, domain, and port. It prevents cross-site attacks like data theft.”
+
+---
+
+# ✅ **Simple Example (Easy to Understand)**
+
+Imagine you are logged into your bank:
+
+```
+https://mybank.com/account
+```
+
+At the same time, you visit a random website:
+
+```
+http://funnyvideos.com
+```
+
+Without SOP, **funnyvideos.com** could run JavaScript that tries to read your bank info.
+
+But SOP blocks this because:
+
+* **Protocol is different (https vs http)**
+* **Domain is different (mybank.com vs funnyvideos.com)**
+
+So the browser says:
+❌ “You are not allowed. Different origin.”
+
+---
+
+# 🧠 **Bonus (1 sentence for interview)**
+
+SOP protects users from attacks like **XSS**, **CSRF**, and unauthorized data access.
+
+
+<span style="color:green;">================================================================ </span>
+
  <h3 id="what_are_sse"> What are SSE (Server-Sent Events)?</h3>
+
+<img  alt="Image" src="https://github.com/user-attachments/assets/95bfbe3a-c777-4be6-8b55-945869399653" />
 
 **Server-Sent Events (SSE)** is a technology that allows a server to **push real-time updates** to the browser over a **single, one-way connection**.
 
@@ -5759,7 +6023,7 @@ eventSource.onmessage = function (event) {
 
 <span style="color:green;">================================================================ </span>
 
-## ⭐ **What is Long Polling?**
+<h3 id="what_is_long_polling"> What is Long Polling ? </h3>
 
 **Long polling** is a technique where the client sends a request to the server and **keeps the connection open** until the server has new data to send.
 
