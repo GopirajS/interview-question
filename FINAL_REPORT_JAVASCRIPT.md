@@ -2194,12 +2194,9 @@ Recursion is when a function solves a problem by breaking it into smaller versio
 
 <h3 id="what_are_callbacks">What are callbacks function?</h3>
 
+A **callback** is a **function passed as an argument to another function**, and it runs **after an asynchronous task completes**.
 
-
-A **callback function** that is **passed as an argument to another function** and is executed **later**.
-
-In simple words:
-**A callback is a function you give to another function so it can call it back when it's ready.**
+It’s how Node.js handles async operations like reading files, making requests, or waiting for timers—*without blocking the program*.
 
 ---
 
