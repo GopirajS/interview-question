@@ -1709,7 +1709,7 @@ class Car {
 
 <span style="color:green;">================================================================ </span>
 
- <h2 id="what_is_an_arrow_function">  What is an arrow function? <h2>
+ <h2 id="what_is_an_arrow_function">  What is an arrow function? </h2>
 
 ![Arrow function](https://www.devopsconsulting.in/blog/wp-content/uploads/2023/05/image-17.png)
 
@@ -1782,7 +1782,7 @@ they take it from the outer (global) scope.
 
 <span style="color:green;">================================================================ </span>
 
- <h2 id="what_is_a_function_expression">  What is a function expression? <h2>
+ <h2 id="what_is_a_function_expression">  What is a function expression? </h2>
 
 A **function expression** is a function that is **assigned to a variable**, rather than declared with a name.
 
@@ -1859,7 +1859,7 @@ setTimeout(function () {
 
 <span style="color:green;">================================================================ </span>
 
- <h2 id="what_is_the_this_keyword">  What is the `this` keyword? <h2>
+ <h2 id="what_is_the_this_keyword">  What is the `this` keyword? </h2>
 
 `this` is a special keyword in JavaScript that refers to the **current execution context** — meaning **the object that is calling the function**.
 
@@ -2858,7 +2858,7 @@ If you want, I can explain:
 <span style="color:green;">================================================================ </span>
 
 
-<h2 id="how_can_you_create_objects_in_javascript" >How can you create objects in JavaScript? <h2>
+<h2 id="how_can_you_create_objects_in_javascript" >How can you create objects in JavaScript? </h2>
 
 JavaScript gives you **several ways** to create objects.
 Here are the **main methods** 👇
@@ -2986,7 +2986,7 @@ p1.greet(); // Hi, I'm John
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="difference_between_dot_notation_and_bracket_notation" >Difference between dot notation and bracket notation? <h2>
+<h2 id="difference_between_dot_notation_and_bracket_notation" >Difference between dot notation and bracket notation? </h2>
 
 JavaScript provides **two ways** to access object properties:
 
@@ -3065,7 +3065,7 @@ console.log(obj["first name"]); // valid
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_is_prototypal_inheritance" >What is prototypal inheritance? <h2>
+<h2 id="what_is_prototypal_inheritance" >What is prototypal inheritance? </h2>
 
 <img  alt="Image" src="https://github.com/user-attachments/assets/36d69dfd-eb45-4109-aa36-0bbab624fd0b" />
 
@@ -3133,7 +3133,7 @@ Prototypal inheritance allows objects to inherit properties from other objects t
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_is_the_prototype_chain" >What is the prototype chain? <h2>
+<h2 id="what_is_the_prototype_chain" >What is the prototype chain? </h2>
 
 <img  alt="Image" src="https://github.com/user-attachments/assets/7dce80f9-5fd5-46f1-b065-b44e53cc5240" />
 
@@ -3221,7 +3221,7 @@ The prototype chain is the path JavaScript follows to find properties by checkin
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_is_a_constructor_function" >What is a constructor function? <h2>
+<h2 id="what_is_a_constructor_function" >What is a constructor function? </h2>
 
 A **constructor function** is a special kind of function used to create **multiple objects with the same structure and behavior**.
 
@@ -3283,7 +3283,7 @@ A constructor function is a blueprint used with the `new` keyword to create mult
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_are_es6_classes" >What are ES6 classes? <h2>
+<h2 id="what_are_es6_classes" >What are ES6 classes? </h2>
 
 **ES6 classes** are a modern, cleaner syntax introduced in ES6 (2015) for creating objects and handling inheritance in JavaScript.
 
@@ -3363,7 +3363,7 @@ Want the next question?
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_is_object_create" >What is `Object.create()`? <h2>
+<h2 id="what_is_object_create" >What is `Object.create()`? </h2>
 
 `Object.create()` is a method used to **create a new object** and **directly set its prototype**.
 
@@ -3443,7 +3443,7 @@ child → parent → Object.prototype → null
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="difference_between_object_freeze_and_object_seal" >Difference between `Object.freeze()` and `Object.seal()`? <h2>
+<h2 id="difference_between_object_freeze_and_object_seal" >Difference between `Object.freeze()` and `Object.seal()`? </h2>
 
 Both are used to **restrict changes** to an object, but the level of restriction is different.
 
@@ -3521,7 +3521,7 @@ console.log(obj); // { a: 100 }
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_is_the_difference_between_shallow_and_deep_copy" >What is the difference between shallow and deep copy? <h2>
+<h2 id="what_is_the_difference_between_shallow_and_deep_copy" >What is the difference between shallow and deep copy? </h2>
 
 ![Image](https://github.com/user-attachments/assets/e5defe2d-f946-4d3c-87e9-7729c428d569)
 
@@ -3597,7 +3597,7 @@ If you'd like, I can explain with diagrams or real-world analogies!
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="how_do_you_clone_an_object" >How do you clone an object? <h2>
+<h2 id="how_do_you_clone_an_object" >How do you clone an object? </h2>
 
 Cloning an object means creating a **copy** of it.
 There are **two types** of cloning:
@@ -3685,7 +3685,7 @@ function deepClone(obj) {
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_are_spread_and_rest_operators_in_javascript" >What are Spread and Rest Operators in JavaScript? <h2>
+<h2 id="what_are_spread_and_rest_operators_in_javascript" >What are Spread and Rest Operators in JavaScript? </h2>
 
 <img  alt="Image" src="https://github.com/user-attachments/assets/429a865f-d9d3-49ca-8669-1c6d77511ff2" />
 
@@ -3765,7 +3765,7 @@ console.log(rest); // [20, 30, 40]
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="difference_between_slice_and_splice" >Difference between `slice()` and `splice()`? <h2>
+<h2 id="difference_between_slice_and_splice" >Difference between `slice()` and `splice()`? </h2>
 
 ## ✅ Difference Between `slice()` and `splice()`
 
@@ -3943,7 +3943,7 @@ console.log(total);
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="how_do_you_remove_duplicates_from_an_array" >How do you remove duplicates from an array? <h2>
+<h2 id="how_do_you_remove_duplicates_from_an_array" >How do you remove duplicates from an array? </h2>
 
 There are several common ways.
 The **most modern and simplest** is using a **Set**.
@@ -4020,7 +4020,7 @@ console.log(result);
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="how_do_you_sort_an_array_of_objects"> How do you sort an array of objects? <h2>
+<h2 id="how_do_you_sort_an_array_of_objects"> How do you sort an array of objects? </h2>
 
 You sort an array of objects using **`Array.prototype.sort()`** with a **custom compare function**.
 
@@ -6160,7 +6160,7 @@ longPoll();
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_are_template_literals">  What are template literals?  <h2>
+<h2 id="what_are_template_literals">  What are template literals?  </h2>
 
 ![Template literal](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*OwdFaZ6A77pHTmwUpFKi0A.png)
 
@@ -6219,7 +6219,7 @@ console.log(`Total: ${a + b}`);
 <span style="color:green;">================================================================ </span>
 
 
-<h2 id="what_is_a_set">  What is a `Set`?  <h2>
+<h2 id="what_is_a_set">  What is a `Set`?  </h2>
 
 
 A **Set** in JavaScript is a built-in object that stores **unique values**.
@@ -6295,7 +6295,7 @@ for (const value of set) {
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_is_a_map">  What is a `Map`?  <h2>
+<h2 id="what_is_a_map">  What is a `Map`?  </h2>
 
 
 A **Map** in JavaScript is a collection of **key-value pairs** where:
@@ -6374,7 +6374,7 @@ for (const [key, value] of map) {
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_is_a_weakmap">  What is a WeakMap?  <h2>
+<h2 id="what_is_a_weakmap">  What is a WeakMap?  </h2>
 
 A **WeakMap** is a special kind of Map where:
 
@@ -6424,7 +6424,7 @@ user = null;
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_is_a_weakset">  What is a WeakSet?  <h2>
+<h2 id="what_is_a_weakset">  What is a WeakSet?  </h2>
 
 A **WeakSet** is similar to a Set, but with two key differences:
 
@@ -6478,7 +6478,7 @@ obj1 = null; // remove reference
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_are_modules_in_javascript">  What are modules in JavaScript?  <h2>
+<h2 id="what_are_modules_in_javascript">  What are modules in JavaScript?  </h2>
 
 
 <img alt="Image" src="https://github.com/user-attachments/assets/e0054f34-38ad-4338-aaa4-ed76f6cb77c9" />
@@ -6569,7 +6569,7 @@ console.log(multiply(2, 3)); // 6
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="difference_between_named_and_default_exports">  Difference between named and default exports?  <h2>
+<h2 id="difference_between_named_and_default_exports">  Difference between named and default exports?  </h2>
 
 JavaScript modules allow you to export code in **two ways**:
 
@@ -6648,7 +6648,7 @@ import m from './utils.js'; // "m" can be any name
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_is_dynamic_import">  What is dynamic import?  <h2>
+<h2 id="what_is_dynamic_import">  What is dynamic import?  </h2>
 
 ![Image](https://github.com/user-attachments/assets/413aff84-236d-4eba-bc86-b8ccb15b57f2)
 
@@ -6715,7 +6715,7 @@ if (user.isAdmin) {
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_is_the_temporal_dead_zone">  What is the temporal dead zone?  <h2>
+<h2 id="what_is_the_temporal_dead_zone">  What is the temporal dead zone?  </h2>
 
 
 ![Image](https://github.com/user-attachments/assets/c8829c18-d8f9-4198-9316-90491d4d16ad)
@@ -6784,7 +6784,7 @@ It ensures you **don’t use a variable before its initialization**, even though
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_is_nullish_coalescing">  What is nullish coalescing?  <h2>
+<h2 id="what_is_nullish_coalescing">  What is nullish coalescing?  </h2>
 
 <img  alt="Image" src="https://github.com/user-attachments/assets/80257e74-172b-499e-a058-3c661a965127" />
 
@@ -6834,7 +6834,7 @@ It’s safer than `||` when values like `0`, `false`, or `""` are valid and shou
 
 <span style="color:green;">================================================================ </span>
 
-<h2 id="what_is_optional_chaining">  What is optional chaining?  <h2>
+<h2 id="what_is_optional_chaining">  What is optional chaining?  </h2>
 
 ### ⭐ **What is Optional Chaining (`?.`)?**
 
